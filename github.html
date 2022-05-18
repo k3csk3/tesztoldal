@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css az aloldalaknak/github.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body id="oldalteteje">
+    <header>
+        <h1>GitHub</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+          <nav class="col-2 navbar">
+            <ul class="navmenu">
+                <li><a href="index.html"><strong>Főoldal</strong></a></li>
+                <li><a href="github.html"><strong>GitHub</strong></a></li>
+                <li><a href=""><strong>A HTML elemek pozícionálása</strong></a></li>
+                <li><a href=""><strong>A többszörösen egymásba ágyazott szelektorok</strong></a></li>
+                <li><a href=""><strong>Az attributum szelektorok</strong></a></li>
+                <li><a href=""><strong>Szövegek helyettesítése a szelektorban</strong></a></li>
+                <li><a href=""><strong>Pszeudor szelektorok</strong></a></li>
+                <li><a href=""><strong>Szövegformázó elemek -em, -strong</strong></a></li>
+                <li><a href=""><strong>Blokk és inline elemek</strong></a></li>
+                <li><a href=""><strong>Listák használata</strong></a></li>
+                <li><a href=""><strong>A HTML elemek formázása -margin, -border, -padding</strong></a></li>
+                <li><a href=""><strong>Box-shadow</strong></a></li>
+                <li><a href=""><strong>Relatív mértékegységek használata</strong></a></li>
+                <li><a href=""><strong>Láthatóság és megjelenés</strong></a></li>
+                <li><a href=""><strong>Az egyes HTML elemek pozícionálása</strong></a></li>
+                <li><a href=""><strong>A label</strong></a></li>
+                <li><a href=""><strong>Checkbox és radio</strong></a></li>
+                <li><a href=""><strong>Fieldset</strong></a></li>
+                <li><a href=""><strong>A bootstrap megismerése</strong></a></li>
+                <li><a href=""><strong>JavaScript</strong></a></li>
+            </ul>
+          </nav>
+          <div class="col-8 tartalom">
+            <h2 id="Bevezető">A GitHub</h2>
+            <p>A GitHub itt érhető el: <a href="https://github.com">github.com</a></p>
+            <p>A GitHub egy ingyenes Git szerver</p>
+            <p>Ide tudják az együtt dolgozó kollégák 
+                feltölteni a módosításaikat és a GitHub-on keresztül szinkronizálni a munkájukat.</p>
+            <p><strong>hasznos linkek:</strong></p>
+            <p><a href="https://docs.github.com/en/get-started/quickstart/hello-world">link 1</a></p>
+            <p><a href="https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration">link 2</a></p>
+            <!-- itt jó lenne tudni, hogy a két linkről hogyan vehetem le a margint -->
+            <h2 id="klónozás">Egy GitHub Repository klónozása</h2>
+            <p><i>Mi az a klónozás?</i></p>
+            <p>Az a művelet, amikor egy meglévő Git repository tartalmát letöltöm a gépemre 
+                és beállítom, hogy a Git figyelje a mappát.</p>
+            <h4>A klónozható URL kimásolása a GitHub oldaláról:</h4>
+            <p>Parancssor nyitása a Sajátgépen</p>
+            <a href="img/cmsnyitas.JPG" target="_blank"><img src="img/cmsnyitas.JPG" alt="cms"></a>
+            <p>Betallózás a kívánt könyvtárba.</p>
+            <a href="img/cdmparancsok.JPG" target ="_blank"><img src="img/cdmparancsok.JPG" alt="parancsok" ></a>
+            <p><em>(A "cd mappaneve" paranccsal tudunk bemenni a mappába, ha a cd után két pontot rakunk (..), akkor kifele lépünk,
+              illetve a "dir"-el megnézhetjük, hogy mi van a mappában. Ezen kívül van egy csomó másik, 
+              például a "new .txt"-vel txt fáljt adunk hozzá, vagy a "code ."-al megnyitjuk a Visual Studio Code-val a mappát.)</em></p>
+            <p>Ezek után leklónozzuk.</p>
+            <a href="img/github letoltes.JPG" target="_blank"><img src="img/github letoltes.JPG" alt="githubletöltés"></a>
+            <p><em>(A klónozást úgy csináljuk, hogy a "git clone" kifejezés után beírjuk a GitHub linkjét.)</em></p>
+            <h2>Forkolás</h2>
+            <p>A forkolás nagyon hasonló a klónozáshoz, csak itt nem én hozom létre a kezdő tartalmat. Valaki másnak kiválasztom a repo-ját, majd egyszerűen rányomok a Fork gombra.
+              Így létrejön egy új repo a saját nevem alatt, de az eredeti repo tartalmával. Innen már én fejlesztem tovább az alkalmazásomat, a módosításaim nem lesznek hatással az eredeti, forkolt repo-ra.</p>
+            <a href="img/forkolás.JPG" target="_blank"><img src="img/forkolás.JPG" alt="forkolás"></a>
+            <p><i>(A forkolásnak a jele a jobb fölső sarokban van. Ez már amikor átkerül az én nevem alá lehet is klónozni és használni.)</i></p>
+            <h2 id="állapotok">A fájlok különböző állapotai a fejlesztés során</h2>
+            <p>Itt inkább két kép az, ami jól megmutatja a dolgokat. Alá beírom a parancsokat.</p>
+            <a href="img/git file mukodes.png" target="_blank"><img src="img/git file mukodes.png" alt="működés"></a>
+            <a href="img/git közös server.JPG" target="_blank"><img src="img/git közös server.JPG" alt=""></a>
+            <p><i>(Lokális parancsok: git status --help, git add --help, git commit --help)</i></p>
+            <p>Egy fájl négy állapotban lehet a gépünkön:</p>
+            <ul>
+              <li><strong>Untracked:</strong>a Git nem törődik a fájllal. Ez újonnan létrehozott fájloknál jellemző.</li>
+              <li><strong>Unmodified:</strong>a Git követi a fájlt, és mi nem módosítottuk azt. Ez az újonnan letöltött fájlok állapota.</li>
+              <li><strong>Modified:</strong>a Git követi a fájlt, és mi módosítottuk.</li>
+              <li><strong>Staged:</strong>a Git követi a fájlt, mi módosítottuk, és a módosítás be fog kerülni az adatbázisba.</li>
+            </ul>
+            <ol>
+              <li>Létrehozunk egy új fájlt</li>
+              <li>git add parancssal hozzáadjuk a staging area-hoz</li>
+              <li>git commit paranccsal a staging area tartalmát hozzáadjuk az adatbázishoz</li>
+            </ol>
+            <h2 id="szinkronizálás">Szinkronizálás</h2>
+            <p>Ismerjük a commit parancsot, amivel a változtatásainkat tudjuk véglegesíteni a helyi gépünkön. Ideje ezeket feltölteni egy közös Git szerverre.
+              A közös munka alapját a következő három parancs jelenti:</p>
+            <p><strong>Fetch - Mi történt mostanában?</strong></p>
+            <p>A "git fetch" parancs megnézi, milyen változások történtek a szerveren. Ezeket a változásokat le is tölti, 
+              de nem nyúl hozzá az aktuális munkánkhoz, a working directory nem változik a hatására. 
+              Ezáltal nyugodtan kiadhatjuk bármikor a parancsot, nem lesz kellemetlen mellékhatása.</p>
+            <p><strong>Pull - Jöhet minden!</strong></p>
+            <p>A "git pull" parancs letölti a változásokat a szerverről, és integrálja a saját munkánkba. 
+              Fontos különbség a fetch parancshoz képest, hogy a pull nem egy biztonságos parancs, változni fog a mappánk tartalma, ha kiadjuk. 
+              Mindig commitoljunk, mielőtt kiadnánk a pull parancsot!</p>
+            <p><strong>Push - Megy a munkám!</strong></p>
+            <p>A "git push" parancs feltölti a commitjainkat a szerverre. 
+              Jegyezzük meg, csak azok a változások mennek fel, amiket commitoltunk! 
+              Mielőtt pusholni próbálnánk, kérjük el a szervertől a változásokat a pull paranccsal!</p>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div id="menusor">
+          <ul class="almenu">
+            <li><a href="#Bevezető">Bevezető</a></li>
+            <li><a href="#klónozás">Egy GitHub Repository klónozása</a></li>
+            <li><a href="#állapotok">A fájlok különböző állapotai a fejlesztés során</a></li>
+            <li><a href="#szinkronizálás">Szinkronizálás</a></li>
+            <li><a href="#oldalteteje">Vissza az oldal tetejére</a></li>
+    </ul>
+        </div>
+        <!-- Itt most véletlenül jól áll, de majd itt szükséges lenne kitalálni, hogy a textboxot hogyan méretezzem. -->
+    </main>
+    <!-- érdekelne, hogy mi a bánatért nem megy ki az oldal végéig a col -->
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+    <!-- Emiatt nem akartem külön javaScript fájlt csinálni. -->
+</body>
+</html>

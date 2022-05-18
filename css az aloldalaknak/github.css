@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.almenu li {
+    list-style: none;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 3px;
+    border-left: solid 2px #e0ac69;
+}
+
+.almenu li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #e0ac69;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.almenu li:hover::after {
+    width: 100%
+}
+
+.almenu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+div.tartalom a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+img {
+    width: 800px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    border: outset 4px #e0ac69;
+}
+
+p em {
+    color: gray;
+}
+
+#menusor {
+    position: fixed;
+    top: 220px;
+    right: 70px;
+    background-color: #FBE7CB;
+    border: solid 2px #e0ac69;
+    border-radius: 20px;
+}
+
+#menusor ul li {
+    max-width: 300px;
+    margin-right: 15px;
+}
