@@ -74,3 +74,11 @@ h2, p, h4 {
     border-radius: 10px;
     box-shadow: 3px 3px #f8eeee;
 }
+
+#menusor {
+    background-color: #FBE7CB;
+    border: solid 2px #e0ac69;
+    border-radius: 20px;
+    position: sticky;
+    top: 5px;
+}
