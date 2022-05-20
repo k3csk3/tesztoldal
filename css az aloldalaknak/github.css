@@ -35,9 +35,6 @@ div.tartalom a {
 }
 
 img {
-    width: 800px;
-    margin-bottom: 40px;
-    margin-left: 20px;
     border: outset 4px #e0ac69;
 }
 
@@ -46,12 +43,11 @@ p em {
 }
 
 #menusor {
-    position: fixed;
-    top: 220px;
-    right: 70px;
     background-color: #FBE7CB;
     border: solid 2px #e0ac69;
     border-radius: 20px;
+    position: sticky;
+    top: 5px;
 }
 
 #menusor ul li {
