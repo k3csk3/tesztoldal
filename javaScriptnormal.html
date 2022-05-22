@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanulóoldal</title>
+  <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css az aloldalaknak/javascript.css">
+</head>
+
+<body id="oldalteteje">
+  <header>
+    <h1 id="javaScript">javaScript (normal)</h1>
+  </header>
+  <main class="container-fluid">
+    <div class="row no-gutters">
+      <nav class="col-12 col-md-3 col-lg-2 navbar">
+        <ul class="navmenu">
+          <li><a href="index.html"><strong>Főoldal</strong></a></li>
+          <li><a href="github.html"><strong>GitHub</strong></a></li>
+          <li><a href="javaScript.html"><strong>JavaScript (easy)</strong></a></li>
+          <li><a href="javaScriptnormal.html"><strong>JavaScript (normal)</strong></a></li>
+        </ul>
+      </nav>
+      <div class="col-12 col-md-6 col-lg-8 tartalom">
+        <h2 id="javaScript">A javaScript program flow-ja</h2>
+        <p>A javaScriptben a programok föntről lefele futnak, de ezt nem mindig így akarjuk. Van, hogy arra van szükség,
+          hogy extra kódok legyenek benne, néha pedig ki is akarunk zárni párat, loopolni, vagy ismételni.</p>
+        <p>Itt az <strong>"if ... else ... "</strong> jön szóba,
+          vagy a <strong>"truthy and falsy kifejezések"</strong> <em>(igaz és hamis kifejezések)</em>,
+          a <strong>"Comparing === to =="</strong> <em>(összehasonlítás)</em>,
+          a <strong>ternary operator</strong> <em>(terner operátor)</em>, <strong>block scope</strong>, amiről már volt
+          szó,
+          illetve a <strong>Loops: for, while, do...while</strong> <em>(hurkok)</em>.</p>
+        <p>Ezek az kulcsszavak <em>(keyword)</em>, végrehajtják azt, amit belerakunk a {} közé, akár egy soros, akár
+          több.</p>
+        <h4 id="if">If</h4>
+        <p>Ahogy a nevében is benne van, feltételekkel dolgozhatunk benne. A Boolean-en alapszik,
+          tehát az igaz <em>(true)</em> és a hamis <em>(false)</em> eredmények születhetnek. De persze példázva ez is
+          könnyebb.
+        </p>
+        <p>Érdemes ennél a résznél ránézni az Operátorokra <em>(operators)</em>, amik itt vannak:</p>
+        <p><a href="https://www.w3schools.com/jsref/jsref_operators.asp">Link</a></p>
+        <a href="img/if.JPG" target="_blank"><img src="img/if.JPG" class="img-fluid" alt="if.JPG"></a>
+        <p>Persze lehet bonyolítani a dolgokat, meg lehet azt is nézni, hogy betűkkel (string) mit operál.
+        </p>
+        <a href="img/if2.JPG" target="_blank"><img src="img/if2.JPG" class="img-fluid" alt="if2.JPG"></a>
+        <p>A végére egy bonyolultat:</p>
+        <a href="img/if3.JPG" target="_blank"><img src="img/if3.JPG" class="img-fluid" alt="if3.JPG"></a>
+        <p>Ennél a résznél érdemes kitérést tenni arra, hogy mi is számít hamisnak <em>(false)</em> és igaznak
+          <em>(true)</em>.
+        </p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">falsy</th>
+              <th scope="col">truthy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>Everything NOT falsy (minden, ami nem false)</td>
+            </tr>
+            <tr>
+              <td>"" vagy '' (empity string)</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>null</td>
+              <td>0.5</td>
+            </tr>
+            <tr>
+              <td>undefined</td>
+              <td>"0"</td>
+            </tr>
+            <tr>
+              <td>NaN</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- ez a táblázat lehetne kicsit igényesebb is -->
+        <h4 id="ifelse">If ... else</h4>
+        <p>Azt is meg kell adnunk a programsornak, hogy mi van akkor, ha az if hamis <em>(false)</em>. Erre való az else
+          <em>(egyébként)</em>.
+        </p>
+        <p>Persze, mint minden normális esetben, most is Tolkien segítségét kerjük a dolgok megértésében.</p>
+        <a href="img/ifelse.JPG" target="_blank"><img src="img/ifelse.JPG" class="img-fluid" alt="ifelse.JPG"></a>
+        <p>De lehet olyan dolog, amikor a feltétel nem teljesül, így van egy "else" is.</p>
+        <a href="img/ifelse2.JPG" target="_blank"><img src="img/ifelse2.JPG" class="img-fluid" alt="ifelse2.JPG"></a>
+        <p>Még egy utolsó példa, ahol már értékek <em>(value)</em> sincs megadva a változóknak <em>(variable)</em>. Csak
+          az számít,
+          hogy a zárójelben true, vagy false érték van-e. Fontos észrevenni, hogy itt már csak egy egyetlen egyenlőség
+          jel van.</p>
+        <a href="img/ifelse3.JPG" target="_blank"><img src="img/ifelse3.JPG" class="img-fluid" alt="ifelse3.JPG"></a>
+        <h4 id="ternary">Ternary operator (feltételezés)</h4>
+        <p>Lehet a magyar megfelelője nem a legjobb, de talán érthető.
+          A lényeg, hogy rövidíti az "if"-et. Persze itt is a példa segít talán a legtöbbet.</p>
+        <a href="img/ternary.JPG" target="_blank"><img src="img/ternary.JPG" class="img-fluid" alt="ternary.JPG"></a>
+        <h4 id="for">Loop with for()</h4>
+        <p>Néha arra van szükség, hogy néhány kód ismétlődjön. Itt is a példa a legcélravezetőbb.</p>
+        <a href="img/for.JPG" target="_blank"><img src="img/for.JPG" class="img-fluid" alt="for.JPG"></a>
+        <p>A „for” keyword zárójelében van egy statement <em>(utasítás)</em>, ami annyit mond, hogy az „i” egyenlő 0-val. 
+          Ez hajtódik először végre. Ezek után jön egy condition (feltétel), ami annyit csinál, hogy megnézi, 
+          hogy az „i” kisebb-e, mint 5, ha igen, akkor true <em>(igaz)</em> lesz az állítás. 
+          Ezek után a {}-ban dolgok történnek meg, majd ha az állítás, miszerint az „i” még mindig kisebb, mint 5, 
+          akkor vége is van, ha nem, akkor visszaugrik az „i++”-ra, ami hozzáad egyet az „i”-hez. 
+          Az „i” amúgy hagyományosan a loop-okhoz szokták kötni, mint változó <em>(variable)</em>.
+          <h4 id="while">Looping with while()</h4>
+        </p>
+      </div>
+      <div class="col-12 col-md-3 col-lg-2 p-0">
+        <div id="menusor">
+          <ul class="almenu">
+            <li><a href="#javaScript">Bevezető</a></li>
+            <li><a href="#if">If</a></li>
+            <li><a href="#ifelse">If... else</a></li>
+            <li><a href="#ternary">Ternary operator</a></li>
+            <li><a href="#for">Loop with for()</a></li>
+            <li><a href="#while">Looping with while()</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </main>
+  <script src="/js az aloldalaknak/javaScript.js"></script>
+</body>
+
+</html>

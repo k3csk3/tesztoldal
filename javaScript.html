@@ -1,57 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanulóoldal</title>
-    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css az aloldalaknak/javascript.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanulóoldal</title>
+  <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css az aloldalaknak/javascript.css">
 </head>
-<body>
-    <header>
-        <h1 id="javaScript">javaScript</h1>
-    </header>
-    <main class="container-fluid">
-        <div class="row no-gutters">
-          <nav class="col-12 col-md-3 col-lg-2 navbar">
-            <ul class="navmenu">
-                <li><a href="index.html"><strong>Főoldal</strong></a></li>
-                <li><a href="github.html"><strong>GitHub</strong></a></li>
-                <li><a href="javaScript.html"><strong>JavaScript</strong></a></li>
+
+<body id="oldalteteje">
+  <header>
+    <h1 id="javaScript">javaScript (easy)</h1>
+  </header>
+  <main class="container-fluid">
+    <div class="row no-gutters">
+      <nav class="col-12 col-md-3 col-lg-2 navbar">
+        <ul class="navmenu">
+          <li><a href="index.html"><strong>Főoldal</strong></a></li>
+          <li><a href="github.html"><strong>GitHub</strong></a></li>
+          <li><a href="javaScript.html"><strong>JavaScript (easy)</strong></a></li>
+          <li><a href="javaScriptnormal.html"><strong>JavaScript (normal)</strong></a></li>
+        </ul>
+      </nav>
+      <div class="col-12 col-md-6 col-lg-8 tartalom">
+        <h2 id="javaScript">A javaScript</h2>
+        <p>Teljesen fölösleges fogalmakat írni ide, majd jönnek a dolgok.Max annyi,
+          hogy ezen az oldalon csak a legalapabb fogalmak lesznek. A fogalmaknak amúgy angolul és magyarul is
+          itt lesznek. A js fáljban lesz mindenre a példa, de majd ide is bekerülnek a képek.
+        </p>
+        <h2 id="variables">Variables (változók)</h2>
+        <p>Az adatok tárolására szolgálnak (deklarálunk).</p>
+        <p>var <em>(declare/deklaráló)</em> szín <em>(variable/változó)</em> = piros <em>(value/érték)</em></p>
+        <p>Kijelentjü <em>(var)</em>, hogy a szín <em>(változó)</em>-nek az értéke <em>(value)</em> piros.
+          (Kis infó: A programozási nyelvekben a változó úgy képzelhető el,
+          mint egy hely, ami alkalmas egy érték tárolására a számítógé memóriájában.) Három fajta van:
+          <strong>var</strong>, <strong>let</strong>, <strong>const</strong>.
+          Soha ne használjuk a var-t, mert bonyodalmak lehetnek, arra pedig rábaszunk.
+        </p>
+        <h4 id="let">Let</h4>
+        <p>A let értéke változtatható:</p>
+        <a href="img/let.JPG" target="_blank"><img src="img/let.JPG" class="img-fluid" alt="let"></a>
+        <p>A let nem újradekrarálható (redeclared), a chrome itt pl szemét, mert azt mondja, hogy de, viszont
+          mozzilában ez már hiba:</p>
+        <a href="img/let2.JPG" target="_blank"><img src="img/let2.JPG" class="img-fluid" alt="let2"></a>
+        <p>Ezen kívül Block Scope-os. Tehát azok a változók, amikor a {}-on belül vannak nem láthatóak a {}-on
+          kívül. A "var"-ra ez nem igaz, azért is cumi használni.</p>
+        <a href="img/let3.JPG" target="_blank"><img src="img/let3.JPG" class="img-fluid" alt="let3"></a>
+        <p>De itt egy remek példa, ami meg is mutatja a Block Scope működését:</p>
+        <a href="img/let4.JPG" target="_blank"><img src="img/let4.JPG" class="img-fluid" alt="let4"></a>
+        <p>Amúgy meg, a "let" ugyanabban a blockban nem változtatható meg, de ha már egy {}-ben variálunk,
+          akkor vehet fel már értéket <em>(value)</em>.</p>
+        <h4 id="const">Const</h4>
+        <p>A const nem változtatható <em>(reassigned)</em>:</p>
+        <a href="img/const.JPG" target="_blank"><img src="img/const.JPG" class="img-fluid" alt="const"></a>
+        <p>Itt is igaz, hogy nem újradeklarálható <em>(redeclared)</em>.</p>
+        <p>Az interneten azt írták, hogy általános szabály, hogy mindig "const"-al dekraláljunk, kivéve ha tudjuk,
+          hogy az érték meg fog változni.</p>
+        <p>Használjunk "const"-ot új sornál <em>(array)</em>-nál, objektumnál <em>(object)</em>, funkciónál
+          <em>(function)</em>, "regExp"-nél.
+        </p>
+        <p>Kicsit trükkös a "const", mivel nem egy állandó értéket határoz meg, hanem egy állandó hivatkozást
+          határoz meg egy értékre. Tehát nem rendelhetek hozzá új értéket <em>(value)</em>, sort <em>(array)</em>, vagy
+          objektumot
+          <em>(object)</em> a változóhoz <em>(variable)</em>, VISZONT megváltoztathatom a sor <em>(array)</em> elemeit
+          <em>(elements)</em> és az
+          objektum <em>(object)</em> tulajdonságait <em>(propeties)</em>.
+        </p>
+        <p>Íme a sor elemeinek változatására egy példa:</p>
+        <a href="img/const2.JPG" target="_blank"><img src="img/const2.JPG" class="img-fluid" alt="const2"></a>
+        <p>Itt pedig egy példa arra, hogy az objektum <em>(object)</em> tuladjonságát <em>(property)</em> is lehet
+          változtatni:</p>
+        <a href="img/const3.JPG" target="_blank"><img src="img/const3.JPG" class="img-fluid" alt="const3"></a>
+        <p>Ezen kívül ez is Block Scope-os. Tehát azok a változók, amikor a {}-on belül vannak nem láthatóak a {}-
+          on kívül.</p>
+        <h2 id="tipusok">Típusok (types) és Operátorok (operators)</h2>
+        <p>Minden változónak <em>(variable)</em> van egy típusa <em>(type)</em>. A változó <em>(variable)</em> típusa
+          <em>(type)</em> lehet <strong>szám</strong>
+          <em>(number)</em>, <strong>betű</strong> <em>(string)</em>, <strong>Boolean</strong>, ami az igaznak
+          <em>(true)</em> és a hamisnak <em>(false)</em> az értéke, <strong>null</strong> és <strong>undefined</strong>,
+          valamint Objektumok és szimbólumok <em>(Object és Symbols)</em>. Ezeket ráadásul tudjuk konvertálni, tehát át
+          tudjuk az egyiket a másikká alakítani.
+        </p>
+        <p>A változó <em>(variable)</em> értéket a "typeof"-al tudjuk megnézni.</p>
+        <h4 id="szam">Szám <em>(number)</em> operátorai</h4>
+        <p>Számos dolgot lehet csinálni a számokkal.</p>
+        <p>Például át lehet alakítani betűvé <em>(string)</em>:</p>
+        <a href="img/szam.JPG" target="_blank"><img src="img/szam.JPG" class="img-fluid" alt="szam"></a>
+        <p>Lehet matemaikai műveleteket is végezni velük:</p>
+        <a href="img/szam2.JPG" target="_blank"><img src="img/szam2.JPG" class="img-fluid" alt="szam2"></a>
+        <p>Lehet többszörös variánsokat <em>(multiple variants)</em> is lehet csinálni:</p>
+        <a href="img/szam3.JPG" target="_blank"><img src="img/szam3.JPG" class="img-fluid" alt="szam3"></a>
+        <p>Növekmény operátort <em>(increment operator)</em> lehet csinálni:</p>
+        <a href="img/szam4.JPG" target="_blank"><img src="img/szam4.JPG" class="img-fluid" alt="szam4"></a>
+        <p>A javaScript a matekot is ismeri:</p>
+        <a href="img/szam5.JPG" target="_blank"><img src="img/szam5.JPG" class="img-fluid" alt="szam5"></a>
+        <p>Az operátor precedenseket <em>(operator prevedens)</em> itt lehet lelesni:</p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedenc
+          e">Link</a></p>
+        <p>Lehet pontosítani <em>(precision)</em> a számokat, és a negatívokkal is boldogul:</p>
+        <a href="img/szam6.JPG" target="_blank"><img src="img/szam6.JPG" class="img-fluid" alt="szam6"></a>
+        <h4 id="string">String (betűk) operátorai</h4>
+        <p>A betűket (string) " "-ek közé rakjuk, a backslash-el pedig idézőjelbe tudjuk rakni a
+          szövegrészletet, ha akarjuk.</p>
+        <a href="img/string.JPG" target="_blank"><img src="img/string.JPG" class="img-fluid" alt="string"></a>
+        <p>Mellesleg ez hasznos lehet, ha arra vagyunk kíváncsiak, hogy mit lehet még csinálni vele:</p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Link</a>
+        </p>
+        <p>A szövegbe beágyazni is tudunk <em>(embed)</em>.</p>
+        <a href="img/string2.JPG" target="_blank"><img src="img/string2.JPG" class="img-fluid" alt="string2"></a>
+        <p>A betűket <em>(string)</em> manipulálni is lehet, akár a számokat. Össze lehet kötni őket, de akár kisbetűkre
+          vagy nagybetűkore is lehet állítani őket.</p>
+        <a href="img/string3.JPG" target="_blank"><img src="img/string3.JPG" class="img-fluid" alt="string3"></a>
+        <p>De amit a leggyakrabban használnak az a ".length" tulajdonság <em>(property)</em>, ami megmutatja a
+          karakterek számát.</p>
+        <a href="img/string4.JPG" target="_blank"><img src="img/string4.JPG" class="img-fluid" alt="string4"></a>
+        <p>Nem jó, ha szivatja magát az ember, ezért észben kell tartani az idézőjeles szabály, szóval, ha valami
+          idézőjelben van,
+          az mindenkép betű <em>(string)</em></p>.
+        <a href="img/string5.JPG" target="_blank"><img src="img/string5.JPG" class="img-fluid" alt="string5"></a>
+        <h4 id="kombinálás">Számok (numbers) és a betűk (string) kombinálása</h4>
+        <p>Végül a kettőnek a kombinálásáról néhány operátor <em>(operators)</em>.
+          Megesehet ugyanis, hogy azt akarjuk, hogy egy számsor inkább betűként <em>(string)</em> működjön,
+          vagy betű <em>(string)</em> számként <em>(number)</em>.</p>
+        <a href="img/stringesnumber.JPG" target="_blank"><img src="img/stringesnumber.JPG" class="img-fluid"
+            alt="stringesnumber.JPG"></a>
+        <p>Annyit még érdemes itt megjegyezni, ha feltűnik a NaN, akkor az annyit jelent, hogy nem szám az érték (not a
+          number).
+        <h4 id="boolean">Boolean Variables</h4>
+        <p>A false és a true értékekkel <em>(value)</em> mahinál.
+        </p>
+        <a href="img/boolean.JPG" target="_blank"><img src="img/boolean.JPG" class="img-fluid" alt="boolean.JPG"></a>
+        </p>
+        <h4 id="nullesundefined">Null és undefined</h4>
+        <p>Ha a változónak <em>(variable)</em> nem adunk meg értéket <em>(value)</em>, akkor undefined
+          <em>(definiálatlan)</em> lesz.
+        </p>
+        <p>Ha megdjuk a null értéket, akkor a nem történik semmi, a consolon pedig megkapjuk a "null"-t.</p>
+        <a href="img/nullandundefined.JPG" target="_blank"><img src="img/nullandundefined.JPG" class="img-fluid"
+            alt="nullandundefined.JPG"></a>
+        <h4 id="object">Objektum (object)</h4>
+        <p>Csak említésképpen rakom ide, később lesz róluk szó, most elég, ha tudjuk,
+          hogy léteznek ilyenek. Itt egy példa egy Objektítvára <em>(object)</em>:</p>
+        <a href="img/object.JPG" target="_blank"><img src="img/object.JPG" class="img-fluid"
+            alt="object.JPG"></a>
+        <p>Ez volt eddig a javaScriptnek az easy része, ahol átnézhető az, hogy mivel és mit lehet csinálni. 
+          A normál egy kicsit összetettebb dolgokat mutat be, a hard meg kicsit bonyolultabbakat.</p>
+      </div>
+      <div class="col-12 col-md-3 col-lg-2 p-0">
+        <div id="menusor">
+          <ul class="almenu">
+            <li><a href="#javaScript">Bevezető</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <ul>
+              <li><a href="#let"><em>let</em></li></a>
+              <li><a href="#const"><em>const</em></li></a>
+              <li></li>
             </ul>
-          </nav>
-          <div class="col-12 col-md-6 col-lg-8 tartalom">
-            <h2 id="variables">A javaScript</h2>
-            <p>Teljesen fölösleges fogalmakat írni ide, majd jönnek a dolgok.Max annyi, 
-              hogy ezen az oldalon csak a legalapabb fogalmak lesznek. A fogalmaknak amúgy angolul és magyarul is
-              itt lesznek. A js fáljban lesz mindenre a példa, de majd ide is bekerülnek a képek.
-            </p>
-            <h2>Variables (változók)</h2>
-            <p>Az adatok tárolására szolgálnak (deklarálunk).
-            <p>var <em>(declare/deklaráló)</em> szín <em>(variable/változó)</em> = piros <em>(value/érték)</em></p>
-            <p>Kijelentjü <em>(var)</em>, hogy a szín <em>(változó)</em>-nek az értéke <em>(value)</em> piros.
-              (Kis infó: A programozási nyelvekben a változó úgy képzelhető el, 
-              mint egy hely, ami alkalmas egy érték tárolására a számítógé memóriájában.) Három fajta van: var, let, const.
-              Soha ne használjuk a var-t, mert bonyodalmak lehetnek, arra pedig rábaszunk.</p>
-              </p>
-          </div>
-          <div class="col-12 col-md-3 col-lg-2 p-0">
-            <div id="menusor">
-                <ul class="almenu">
-                  <li><a href="#javaScript">Bevezető</a></li>
-                  <li><a href="#variables">Variables</a></li>
-                </ul>
-              </div>
-          </div>
-          </div>
-          </div>
-          </div>
+            <li><a href="#tipusok">Types and Operators</a></li>
+            <ul>
+              <li><a href="#szam">Number</a></li>
+              <li><a href="#string">String</a></li>
+              <li><a href="#kombinálás">Number és String kombinálása</a></li>
+              <li><a href="#boolean">Boolean Variables</a></li>
+              <li><a href="#nullesundefined">>Null és undefined</a></li>
+              <li><a href="#object">>Objektum (object)</a></li>
+              <li><a href="#oldalteteje">Vissza az oldal tetejére</a></li>
+            </ul>
+          </ul>
         </div>
-    </main>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </main>
+  <script src="/js az aloldalaknak/javaScript.js"></script>
 </body>
+
 </html>
