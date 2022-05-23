@@ -64,3 +64,9 @@ p em {
 .btn {
     margin: 10px;
 }
+
+form {
+    background-color: #acbcc4;
+    padding: 20px;
+    border: 2px solid #e0ac69;
+}

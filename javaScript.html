@@ -109,7 +109,7 @@
           e">Link</a></p>
         <p>Lehet pontosítani <em>(precision)</em> a számokat, és a negatívokkal is boldogul:</p>
         <a href="img/szam6.JPG" target="_blank"><img src="img/szam6.JPG" class="img-fluid" alt="szam6"></a>
-        <p>Itt egy apróság megint. Ha használjuk a tizedesjegyeknél a ".toFixed()"-et, 
+        <p>Itt egy apróság megint. Ha használjuk a tizedesjegyeknél a ".toFixed()"-et,
           tehát megírjuk, hogy hanyadik számmal foglalkozzon még, akkor az eredmény string lesz.
         </p>
         <p>Ne keverjem amúgy majd össze a ".toPrecision()"-nal, ami a számokat nézi, nem a tizedesjegyet.</p>
@@ -132,6 +132,16 @@
           idézőjelben van,
           az mindenkép betű <em>(string)</em></p>.
         <a href="img/string5.JPG" target="_blank"><img src="img/string5.JPG" class="img-fluid" alt="string5"></a>
+        <p>Még néhány szó a metódusokról, mert fontos.</p>
+        <p>Van pár fontosabb, például a <strong>.trim()</strong>, ami a felesleges szóközöket vágja le a "string"-ről</p>
+        <p>Ott a <strong>.concat()</strong>, ami új karaktereket fűz hozzá a meglévő Stringhez, azt, ami a zárójelben van.</p>
+        <p>A <strong>toLowerCase()</strong> segítségével az egész kisbetű lesz.</p>
+        <p>A <strong>toUpperCase()</strong> pedig nagybetűvé tesz mindent.</p>
+        <p>De még az is fontos, hogy módosítani és keresni is tudunk a stringben.</p>
+        <p>Az <strong>.indexOf()</strong> megkeresi a Stringen belül egy adott szövegrész kezdetét.</p>
+        <p>A <strong>.replace()</strong> kicseréli a megadott szövegrészt a Stringen belül.
+          Ennek a metódusnak kettő darab úgynevezett paramétere van, tehát két adatot kell a zárójelek között megadni,
+        először azt, amit cserélni akarunk, majd azt, amire cserélni akarjuk.</p>
         <h4 id="kombinálás">Számok (numbers) és a betűk (string) kombinálása</h4>
         <p>Végül a kettőnek a kombinálásáról néhány operátor <em>(operators)</em>.
           Megesehet ugyanis, hogy azt akarjuk, hogy egy számsor inkább betűként <em>(string)</em> működjön,
@@ -155,17 +165,141 @@
         </p>
         <a href="img/nullandundefined.JPG" target="_blank"><img src="img/nullandundefined.JPG" class="img-fluid"
             alt="nullandundefined.JPG"></a>
+        <p>Végül néhány fontosabb logikai operátor:</p>
+        <p><strong><</strong> – kisebb,</p>
+        <p><strong>></strong> – nagyobb,</p>
+        <p><strong><=</strong> – kisebb vagy egyenlő,</p>
+        <p><strong>>=</strong> – nagyobb vagy egyenlő,</p>
+        <p><strong>==</strong> – megegyező érték,</p>
+        <p><strong>===</strong> – megegyező érték és típus,</p>
+        <p><strong>!=</strong> – nem megegyező érték,</p>
+        <p><strong>!==</strong> – nem megegyező érték és típus,</p>
+        <p><strong>!</strong> – tagadás – logikai érték megfordítása,</p>
+        <p><strong>&&</strong> – és,</p>
+        <p><strong>||</strong> – vagy</p>
         <h4 id="object">Objektum (object)</h4>
         <p>Csak említésképpen rakom ide, később lesz róluk szó, most elég, ha tudjuk,
           hogy léteznek ilyenek. Itt egy példa egy Objektítvára <em>(object)</em>:</p>
         <a href="img/object.JPG" target="_blank"><img src="img/object.JPG" class="img-fluid" alt="object.JPG"></a>
         <p>Itt a végén apróságként megjegyzem, hogy a típusokat meg tudunk adni mi is.</p>
         <a href="img/egyebek.JPG" target="_blank"><img src="img/egyebek.JPG" class="img-fluid" alt="egyebek.JPG"></a>
+        <h4 id="példa">Példa</h4>
         <p>Egy példán keresztül összegezzük, hogy mit tudunk már csinálni.</p>
+        <form action="">
+          <h3>Rendelés leadása</h3>
+          <div class="form-group">
+            <label for="">Termék</label>
+            <input type="text" name="top-input" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Mennyiség</label>
+            <input type="number" name="amount-input" class="form-control">
+          </div>
+          <button class="btn btn-primary" onclick="calcAmount()" >Megrendelés</button>
+        </form>
+        <p>Itt egy sima "form" van, amibe két dolgot lehet belerakni, a terméket és a mennyiséget.</p>
+        <p>A terméket "top-input"-nak, a mennyiséget pedig "amount-input"-nak neveztem el.</p>
+        <p>Kifotózom ide, hogy mi van a javaScript.js-ben, de amúgy ott is látható, hogy mit írtam bele.</p>
+        <a href="img/form.JPG" target="_blank"><img src="img/form.JPG" class="img-fluid" alt="form.JPG"></a>
+        <p>Először felvettem "let"-el egy változót, az "amountInput" nevet adtam neki, hogy a nevével is 
+          következtessek arra, hogy ez az "amount-input" nevezetű inputra mutat.</p>
+        <p>Ennek adtam egy értéket, ami a "document.querySelector("input[name='amount-input']")". a "document.querySelector"-nak
+          megadtam, hogy mutasson rá arra az inputra, aminek a neve az, hogy "amount-input", így jött ki ez: "("input[name='amount-input']")"
+        </p>
+        <p>Ezek után felvettem "let"-el egy price változót 1200-as értékkel: let price = 1200, majd egy amount változót
+          "parseInt(amountInput.value) * price" értékkel. Ez annyit csinál, hogy a "parseInt"-el az "amountInput" értékét
+          számmá alakítja, majd megszorozza a price értékével.
+        </p>
+        <p>Persze ez még így nem jó, mert ahogy betöltődik az oldal, egyből lefut a kód, így mindig NaN lesz az eredmény.
+          Ezért kellet neki adni valami pontot, hogy akkor fusson le, amikor mi akarjuk.
+        </p>
+        <a href="img/form2.JPG" target="_blank"><img src="img/form2.JPG" class="img-fluid" alt="form2.JPG"></a>
+        <p>Annyit csináltam csupán, hogy beleraktam egy "funciton"-ba az egészet, mert így már ezt a funkciót
+          hozzáadhatom valamihez, ami hatására, ha akarom lefuthat a kód, de ha akarom a console-ba is
+          meghívhatjuk a "calcAmount()" funkciót, és lepörög a kód. Melleseleg itt a végére egy alertet raktunk még
+          pluszba hozzá, hogy feldobja, hogy mi az ár, de ez később változik.
+        </p>
+        <a href="img/form3.JPG" target="_blank"><img src="img/form3.JPG" class="img-fluid" alt="form3.JPG"></a>
+        <p>Most pedig legyen kicsit igényesebb ez az egész, ha már érthető a dolog úgy, hogy a javaScript segítségével
+          módosítom a HTML elemek tartalmát.</p>
+        
+        <a href="img/form4.JPG" target="_blank"><img src="img/form4.JPG" class="img-fluid" alt="form4.JPG"></a>
+        <form action="">
+          <h3>Rendelés leadása</h3>
+          <div class="form-group">
+            <label for="">Termék</label>
+            <input type="text" name="top-input" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Mennyiség</label>
+            <input type="number" name="amount-inputTwo" class="form-control">
+          </div>
+          <div class="form-group">
+            Fizetendő: <span class="show-amount">0</span> ft
+          </div>
+          <button class="btn btn-primary" onclick="calcAmountTwo()" >Megrendelés</button>
+        </form>
+        <p>Módosítottam kicsit a dolgokat. Létrehoztam egy extra "div"-et a button fölé, ami szeretném,hogy
+          leváltsa majd az alert gombot (Itt gyorsan megjegyzem, hogy minden a calcAmountTwo() alatt megy, hogy ne legyen
+          kavarodás).</p>
+        <a href="img/form5.JPG" target="_blank"><img src="img/form5.JPG" class="img-fluid" alt="form5.JPG"></a>
+        <p>Végül, ahogy látszik is, a "let showAmount = document.querySelector("span.show-amount");"-al megadtam, hogy a showAmount
+          értéke az az element, ami az a span, aminek a "class"-a az, hogy "show-amount".
+        </p>
+        <p>Végül a "showAmount.innerHTML = amount"-al azt tettem, hogy ami a showAmount-on belül van, annak az értéke az "amount".
+          Azoknak a HTML elemeknek, amelyeknek van lezáró tag-je (azaz nem self-closed elemek) lehet tartalma.
+          Az "innerHTML" tulajdonság js alól elérhető, és ki lehet vele olvasni, vagy módosítani is lehet az elemek tartalmát, 
+          azaz a bennük található HTML kódot.</p>
+          <p>Kicsit még bonyolítsuk. Itt is egyet hozzáteszek mindenhez, itt már "calcAmountThree" alatt fognak menni a dolgok.</p>
+          <form action="">
+            <h3>Rendelés leadása</h3>
+            <div class="form-group">
+              <label for="">Termék</label>
+              <input type="text" name="top-input" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Mennyiség</label>
+            <input type="number" name="amount-inputThree" class="form-control" value="1">
+            <small class="form-text text-muted">Mimimum 1, maximum 10 db</small>
+          </div>
+          <div class="form-group">
+            Fizetendő: <span class="show-amountThree">0</span> ft
+          </div>
+          <button class="btn btn-primary" onclick="calcAmountThree()" >Megrendelés</button>
+        </form>
+        <p>A lényeg, hogy hozzáadtam egy szöveget, hogy "Minimum 1, maximum 10 db, plusz beállítottam a "value"-t az intputnak
+          egyre, hogy ne csesszem el folyamatsan azzal a dolgokat, hogy elfelejetek beleírni bármit.</p>
+        <a href="img/form6.JPG" target="_blank"><img src="img/form6.JPG" class="img-fluid" alt="form6.JPG"></a>
+        <p>Ha ez megvan, akkor az "if"-el fogok operálni, mégpedig azt fogom vele csinálni, hogy ellenőrzöm, hogy bekerültek-e az infók</p>
+        <a href="img/form7.JPG" target="_blank"><img src="img/form7.JPG" class="img-fluid" alt="form7.JPG"></a>
+        <p>Az történt, hogy "let"-el hozzáadtam egy "amountNumber"-t, aminek az értéke az amountInput.value, és ezt megvizsgáltam
+          egy "if"-ben. Megadtam neki, hogy alerteljen akkor, ha több, illetve akkor is, ha kevesebb az érték mint amennyit korábban
+          megszabtunk.</p>
+          <p>Mostmár lassan tényleg leállunk, de meg egy kis bonyolítás kell még, mivel ha nem írunk be semmit, akkor NaN-t ad ki,
+            azt meg rühellem. De ha már úgyis megint belenyúlunk, akkor egyszerűsítjük az "if"-et.
+            Természetesen itt már a "calcAmountFour"-al dolgozunk.</p>
+            <form action="">
+              <h3>Rendelés leadása</h3>
+              <div class="form-group">
+                <label for="">Termék</label>
+                <input type="text" name="top-input" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">Mennyiség</label>
+            <input type="number" name="amount-inputFour" class="form-control" value="1">
+            <small class="form-text text-muted">Mimimum 1, maximum 10 db</small>
+          </div>
+          <div class="form-group">
+            Fizetendő: <span class="show-amountFour">0</span> ft
+          </div>
+          <button class="btn btn-primary" onclick="calcAmountFour()" >Megrendelés</button>
+        </form>
+        <p>Ezt csak ide berakom, hogy amúgy ilyen egyszerűen lehet megoldani a "NaN" kérdést. De most mindent leegyszerűsítünk.</p>
+        <a href="img/form8.JPG" target="_blank"><img src="img/form8.JPG" class="img-fluid" alt="form8.JPG"></a>
+        <p>De itt a verzió, ami sokkal egyszerűbb, mint az "if".</p>
+        <a href="img/form9.JPG" target="_blank"><img src="img/form9.JPG" class="img-fluid" alt="form9.JPG"></a>
         <p>Ez volt eddig a javaScriptnek az easy része, ahol átnézhető az, hogy mivel és mit lehet csinálni.
-          A normál egy kicsit összetettebb dolgokat mutat be, a hard meg kicsit bonyolultabbakat.</p>
-        <p>Bazdki Fodi ez miért nem jó?</p>
-        <p><a href="peldaoldal.html">Nyaljameg</a></p>
+          A normál egy kicsit összetettebb dolgokat mutat be, a hard meg már nem vicces bonyolultabbakat.</p>
       </div>
       <div class="col-12 col-md-3 col-lg-2 p-0">
         <div id="menusor">
@@ -185,6 +319,7 @@
               <li><a href="#boolean">Boolean Variables</a></li>
               <li><a href="#nullesundefined">Null és undefined</a></li>
               <li><a href="#object">Objektum (object)</a></li>
+              <li><a href="#példa">Példa</a></li>
               <li><a href="#oldalteteje">Vissza az oldal tetejére</a></li>
             </ul>
           </ul>
