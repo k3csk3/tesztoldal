@@ -1,5 +1,4 @@
-for (let i = 0; i < 5; i++) {
-	console.log(i);
-}
-
-//A console-n megjelenik, hogy 0, 1, 2, 3, 4, 5.
+let userAge = String(33)
+//Itt pl. jobb lenne mégis, ha szám lenne.
+userAge = Number(userAge)
+//Nem bíztam a javaScriptre, hogy definiáljon, én mondom megmi az érték típusa.
