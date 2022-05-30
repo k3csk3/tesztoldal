@@ -106,25 +106,503 @@
         <a href="img/ternary.JPG" target="_blank"><img src="img/ternary.JPG" class="img-fluid" alt="ternary.JPG"></a>
         <h4 id="for">Loop with for()</h4>
         <p>Néha arra van szükség, hogy néhány kód ismétlődjön. Itt is a példa a legcélravezetőbb.</p>
-        <a href="img/for.JPG" target="_blank"><img src="img/for.JPG" class="img-fluid" alt="for.JPG"></a>
-        <p>A „for” keyword zárójelében van egy statement <em>(utasítás)</em>, ami annyit mond, hogy az „i” egyenlő 0-val. 
-          Ez hajtódik először végre. Ezek után jön egy condition (feltétel), ami annyit csinál, hogy megnézi, 
-          hogy az „i” kisebb-e, mint 5, ha igen, akkor true <em>(igaz)</em> lesz az állítás. 
-          Ezek után a {}-ban dolgok történnek meg, majd ha az állítás, miszerint az „i” még mindig kisebb, mint 5, 
-          akkor vége is van, ha nem, akkor visszaugrik az „i++”-ra, ami hozzáad egyet az „i”-hez. 
+        <p>A „for” keyword zárójelében van egy statement <em>(utasítás)</em>, ami annyit mond, hogy az „i” egyenlő
+          0-val.
+          Ez hajtódik először végre. Ezek után jön egy condition (feltétel), ami annyit csinál, hogy megnézi,
+          hogy az „i” kisebb-e, mint 5, ha igen, akkor true <em>(igaz)</em> lesz az állítás.
+          Ezek után a {}-ban dolgok történnek meg, majd ha az állítás, miszerint az „i” még mindig kisebb, mint 5,
+          akkor vége is van, ha nem, akkor visszaugrik az „i++”-ra, ami hozzáad egyet az „i”-hez.
           Az „i” amúgy hagyományosan a loop-okhoz szokták kötni, mint változó <em>(variable)</em>.
-          <h4 id="while">Looping with while()</h4>
+        <p>Folyamatosan ismétlődő programrészletek. Egy ciklus mindaddig ismétlődik, amíg a feltétele igaz.
+          Olyan, mintha azt mondanánk, addig csináld ezt, amíg igaz, hogy…</p>
+        <a href="img/for.JPG" target="_blank"><img src="img/for.JPG" class="img-fluid" alt="for.JPG"></a>
+        <p>A for ciklus minden programnyelvben megtalálható.</p>
+        <p>Három paramétere van:</p>
+        <ul>
+          <li><strong>ciklusváltozó:</strong> egy Number típusú változó, minden futás után módosítod az értékét.</li>
+          <li><strong>feltétel:</strong> Boolean, amíg ez a feltétel igaz (a ciklusváltozó értékvizsgálata), addig fut a
+            ciklus.</li>
+          <li><strong>léptetés:</strong> minden ciklus végén lefut, itt kell a ciklusváltozót növelni/csökkenteni./li>
+        </ul>
+        <p><strong>Ciklusmag</strong></p>
+        <p>Az az utasítás vagy utasítások, amelyek a feltétel teljesülése esetén lefutnak.</p>
+        <p><strong>Elöltesztelős ciklus</strong></p>
+        <p>Először megvizsgálod, hogy a feltételed igaz-e, és ha igen, akkor lefut a ciklusmag.
+          Tehát a for egy tipikusan elöltesztelős ciklus.
+          Fontos megjegyezni, hogy egy for ciklust bármikor átírhatsz while ciklusba.
+          Tehát amit for-al megvalósíthatsz, azt while-al is, csupán a szintaxis más.
         </p>
+        <p><strong>Tömb bejárása ciklussal</strong></p>
+        <p>Ha szeretnéd egy kollekció összes elemét végigjárni,
+          és valamilyen vizsgálatot vagy műveletet végezni velük,
+          akkor általában az első elemtől indulsz, lefut a ciklusmag, és növeled az iterátort.
+          Ezt mindaddig kell ismételned, amíg a kollekció végére nem érsz,
+          tehát ismerned kell hozzá a hosszát.</p>
+        <a href="img/for2.JPG" target="_blank"><img src="img/for2.JPG" class="img-fluid" alt="for2.JPG"></a>
+        <p><strong>continue és break</strong></p>
+        <p><strong>continue:</strong> ha valamiért úgy döntesz, hogy mégsem akarod lefuttatni a teljes ciklusmagot,
+          akkor a continue utasítással tovább tudsz ugrani a következő iterációra.</p>
+        <p><strong>break:</strong> a break utasítás nem a következő iterációra ugrik, hanem megszakítja a ciklust,
+          azaz a ciklusmag többet nem kerül végrehajtásra, úgy is mondhatnánk, a program továbbmegy.</p>
+        <a href="img/for3.JPG" target="_blank"><img src="img/for3.JPG" class="img-fluid" alt="for3.JPG"></a>
+        <p>A „for” keyword zárójelében van egy statement (utasítás),
+          ami annyit mond, hogy az „i” egyenlő 0-val.
+          Ez hajtódik először végre. Ezek után jön egy condition (feltétel), ami annyit csinál,
+          hogy megnézi, hogy az „i” kisebb-e, mint 3, ha igen, akkor true (igaz) lesz az állítás.
+          Ezek után a {}-ban dolgok történnek meg, majd ha az állítás, miszerint az „i” még mindig kisebb,
+          mint 3, akkor vége is van, ha nem, akkor visszaugrik az „i++”-ra, ami hozzáad egyet az „i”-hez.
+          Az „i” amúgy hagyományosan a loop-okhoz szokták kötni, mint változó (variable).</p>
+        <h4 id="while">Looping with while()</h4>
+        <p>Ez egy univerzális módja a dolgoknak,
+          ugyanis a a "for" ciklusnál a deklarált változó csak a blokkon belül létezik,
+          tehát miután lement a "for" ciklus, nem tudod kiírati az i értékét (csak a blokkon belül)</p>
+        <p>A "while" viszont a teljes lefuttatás után is létezni fog,
+          még ki is tudjuk íratni az értéket a while ciklus után.</p>
+        <a href="img/while.JPG" target="_blank"><img src="img/while.JPG" class="img-fluid" alt="while.JPG"></a>
+        <p>Ahogy a neve is mutatja, mindaddig fut amíg a megadott feltétel igaz.
+          Egy paramétere van, ami egy logikai kifejezés, ennek kell igaznak lennie,
+          hogy a ciklus újra lefusson.
+        </p>
+        <p><strong>Végtelen ciklus</strong></p>
+        <p>A while ciklus használata esetén gyakran előfordul,
+          hogy a feltételt nem figyeljük megfelelően.
+          Ekkor fordul elő, hogy a feltétel mindig igaz marad, és a ciklus végtelen hurokba kerül.
+          A különböző értelmezők általában bizonyos számú futás után hibát adnak és leállnak, vagy lefagy a felület,
+          mint például az alábbi esetben is.
+        <p><strong>Kollekciók bejárása</strong></p>
+        <p>Természetesen a while ciklus is alkalmas arra,
+          hogy tömböket vagy objektumokat járj be a segítségével.
+          Itt viszont nem kapsz semmi segítséget ehhez, neked kell leprogramoznod a kulcsok léptetését.</p>
+        <p>A példában kiolvasom a kulcsokat, majd bejárom az objektumot,
+          közben pedig növelem az iterátort, ami alapján előállítom a kulcsokat:</p>
+        </p>
+        <a href="img/while2.JPG" target="_blank"><img src="img/while2.JPG" class="img-fluid" alt="while2.JPG"></a>
+        <h4>Looping with do… while()</h4>
+        <p>A különbség a "do" loopolásnál, hogy itt egyszer mindenképpen végig megy a blokkon belüli dolog.</p>
+        <a href="img/dowhile.JPG" target="_blank"><img src="img/dowhile.JPG" class="img-fluid" alt="dowhile.JPG"></a>
+        <p><strong>dowhile - hátultesztelő ciklus
+          </strong></p>
+        <p>Az elöltesztelős ciklusoknál megfigyelhettük,
+          hogy először a feltétel vizsgálata történik meg,
+          majd utána a kiértékelés eredményétől függően a ciklusmag futtatása.
+          Ezzel szemben a hátultesztelős ciklus először lefuttatja a ciklusmagot,
+          és csak utána vizsgálja meg a feltételt. A gyakorlatban ez a következőképp fest:</p>
+        <a href="img/dowhile2.JPG" target="_blank"><img src="img/dowhile2.JPG" class="img-fluid" alt="dowhile2.JPG"></a>
+        <p>A fenti esetben a konzolra kiírja a program, hogy 10,
+          ugyanis a hátultesztelős ciklus lényege, hogy akár igaz a feltétel, akár hamis, egy alkalommal biztosan le fog
+          futni.</p>
+        <h2 id="elemi">Elemi algoritmusok</h2>
+        <p><strong>Algoritmus, avagy al-Hvárizmi kicsit félrefordítva</strong></p>
+        <p>Az algoritmus egy feladat, probléma megoldásához vezető lépések, utasítások sorozata.
+          Például egy recept is egy algoritmus, leírja lépésenként, hogyan kell elkészíteni egy ételt.
+          Ha követed pontosan az utasításokat, akkor valószínűleg sikerül neked is az asztalra varázsolni a vacsorát.
+          Ez persze függ attól is, mennyire részletesen tartalmazza a recept az adott étel elkészítéséhez tartozó
+          lépéseket.
+          Egy kezdőnek természetesen minden apró mozzanatot el kell magyarázni,
+          míg egy gyakorlott séfnek elegendő egy nagyobb léptékű leírás.
+          Ebből is látszik, hogy egy problémát nem csak egyféle algoritmussal oldhatsz meg.
+          Nemcsak a lépések mélységében különbözhetnek ezek az algoritmusok, hanem akár teljesen más lépésekből is
+          állhatnak,
+          és a végeredmény mégis ugyanaz.</p>
+        <p><strong>Az algoritmus jellemzői</strong></p>
+        <p>Az egyszerű algoritmusokon túl lehetnek akár igen bonyolultak is,
+          mint pl. egy nagy forgalmú reptér irányítása.
+          Az algoritmussal szemben ezért is állítottak néhány követelményt:</p>
+        <ul>
+          <li><strong>Véges:</strong> véges számú lépésből áll.</li>
+          <li><strong>Egyértelmű:</strong> a megoldáshoz vezető lépéssorozat tisztán,
+            egyértelműen van megadva, és szigorúan követhető, nem hagy kétségeket.</li>
+          <li><strong>égezhető:</strong> elvárjuk, hogy az algoritmust végre lehessen hajtani,
+            vagyis a lépések elég egyszerűek legyenek, hogy pontosan végre lehessen hajtani.</li>
+        </ul>
+        <p><strong>Algoritmusleíró eszközök</strong></p>
+        <p>Az algoritmus leírásának módja több tényezőtől függ,
+          például a megoldandó problémától és a célközönségtől. Egy egyszerű algoritmust akár szövegesen is leírhatsz
+          pár mondatban röviden, pl. a reggeli kávé elkészítése:
+        </p>
+        <ul>
+          <li>Bekapcsolom a kávéfőző gépet.</li>
+          <li>Ellenőrzőm, hogy van-e elég kávé és víz a gépben.</li>
+          <li>Amikor felmelegedett, odateszem a csészét és megnyomom az espresso gombot.</li>
+        </ul>
+        <p>Előfordulhat, hogy képeket használnak az algoritmus bemutatására vagy önállóan,
+          vagy a szöveges leírás mellé kiegészítésképpen.
+          Gondolj csak a repülőgépeken a Safety On Board leírásokra (ne legyen rá szükséged),
+          például mi a teendő, ha fogy az oxigén az utastérből.</p>
+        <p>Amíg csak utasításokat kell sorrendben egymás után sorolnom,
+          addig ezek a módszerek teljesen megfelelnek.
+          Viszont amikor már a szekvencián kívül más vezérlő szerkezetet is tartalmaz az algoritmus,
+          akkor szerencsésebb lehet valami olyan leíró eszköz, ami szemléletesebb.
+          A folyamatábra például a folyó szövegnél sokkal kifejezőbb ezekben az esetekben.</p>
+        <p><strong>Vezérlési szerkezetek</strong></p>
+        <p>A szekvencián kívül két vezérlési szerkezetet használtunk a folyamatábrán.
+        </p>
+        <p>Az egyik az elágazás (szelekció),
+          amikor feltételtől függően más-más irányba halad tovább a vezérlés.
+        </p>
+        <p>A másik szerkezet az ismétlés (iteráció), amikor bizonyos esetben visszairányítjuk
+          a vezérlést egy korábbi pontra, mint pl. amikor várakoztunk, amíg fel nem melegedett a gép.
+        </p>
+        <p>Az elágazás és ciklus különböző fajtáiról majd a későbbiekben lesz szó.
+        </p>
+        <p><strong>Strukturált algoritmus</strong></p>
+        <p>Strukturált az algoritmus, ha csak az alap 3 vezérlőszerkezetet (szekvencia, szelekció, iteráció)
+          használod. Ezeket egymásba is ágyazhatod, de minden ilyen egységnek csak egy kimenete lehet.
+          Vagyis nem húzhatod a nyilakat bárhova.</p>
+        <p><strong>Pszeudo kód, a kis hamis</strong></p>
+        <pre>              Kávéfőző bekapcsolása
+              IF nincs elég kávé THEN
+                  kávé hozzáadása
+              ENDIF
+              IF nincs elég víz THEN
+                  víz hozzáadása
+              ENDIF
+              
+              WHILE nem melegedett fel
+                 10 mp várakozás
+              ENDWHILE
+              
+              csésze odahelyezése
+              gomb megnyomása</pre>
+        <p>Nagyon fontos az indentálás (beljebb kezdés), hogy lásd az algoritmus szerkezetét,
+          ezáltal látod az alapstruktúrák egymásba ágyazását.</p>
+        <p>A pszeudo kódban könnyebb betartani, hogy strukturált algoritmust írj,
+          a folyamatábrán könnyű a nyilakat úgy húzni, hogy elveszítsd a strukturáltságot.
+          Napjainkban is van azért helye, például az UML-ben (Unified Modeling Language) is találunk a folyamatábrához
+          hasonlót, csak ott aktivitás diagramnak nevezik.
+          Az UML tulajdonképpen egy vizuális modellező nyelv, ami nagyon hasznosnak bizonyul a szoftverek készítésének
+          folyamatában, leginkább a kezdeti analizáló és tervező fázisban.
+          Az objektum orientált programozás tanulásakor használunk majd osztálydiagramot is,
+          ami szintén az UML része.</p>
+        <p>Természetesen az itt bemutatottakon kívül még más algoritmusleíró eszközök is léteznek,
+          pl. a struktogram, de ezeket most hagyjuk pihenni.</p>
+        <p><strong>Használandó vezérlési szerkezetek a programkódban</strong></p>
+        <p>Mivel minden algoritmus felépíthető három vezérlési szerkezet használatával,
+          a programkódban is csak ezeket kell most használnod:</p>
+        <ul>
+          <li>szekvencia,</li>
+          <li>szelekció,</li>
+          <li>iteráció.</li>
+          <li>Van még az ugrás, de arra most nincs szükség.</li>
+        </ul>
+        <p><strong>Elemi algoritmusok</strong></p>
+        <p>Van néhány olyan folyamat a programozás során,
+          amire az idők során kialakultak a hatékony technikák. Most ezeket mutatom meg.</p>
+        <p>Ismétlés: Az algoritmus azon lépések sorozata, amelyek egy probléma megoldásához vezetnek.</p>
+        <p><strong>Az algoritmus</strong></p>
+        <p>Tehát mindig úgy kezdődik, hogy van egy problémád.
+          Ezt a problémát általában sokféleképpen meg lehet oldani, így ahány megoldás létezik,
+          annyi algoritmus van hozzá. Jöjjön egy példa</p>
+        <p><strong>bankkártyás fizetésre:</strong> milyen lépésekből áll amikor kártyával fizetsz a boltban?</p>
+        <ul>
+          <li>Előveszed a bankkártyát.</li>
+          <li>Ellenőrzöd az összeget a kijelzőn.</li>
+          <li>Hozzáérinted a kártyát a terminálhoz.</li>
+          <li>Megvárod a hangjelzést.</li>
+          <li>Elteszed a kártyát.</li>
+        </ul>
+        <p>Ez az öt lépés gyakorlatilag egy algoritmus.
+          A minimálisan szükséges lépéseket tartalmazza a megoldáshoz.
+          Ki lehetne terjeszteni a teljes vásárlás folyamatára is, de abban az esetben olyan lépések
+          is lennének benne, mint mondjuk betesszük a terméket a kosárba, vagy távozunk a boltól.</p>
+        <p><strong>Nevezetes algoritmusok</strong></p>
+        <p>Azért hívják őket nevezetesnek, mert gyakran kell őket használni.
+          Olyan programozási folyamatokat írnak le, amelyek nagyon gyakoriak a hétköznapi munka során.
+          Most csak röviden áttekintjük őket, de részletesen is foglalkozunk majd velük,
+          illetve begyakoroljuk őket.</p>
+        <p><strong>Pszeudokód</strong></p>
+        <p>Mielőtt azonban tanulmányoznánk az algoritmusokat, ismerkedjünk meg a pszeudokód fogalmával!
+          Itt az egyes lépéseket egyszerű, beszélt nyelven írjuk le.
+          Azért jó, mert csak az algoritmust adjuk meg, és utána gyakorlatilag bármilyen programozási nyelven el tudjuk
+          készíteni a végleges kódot. Azaz nyelvfüggetlen. Például így néz ki egy ciklus, amellyel sokat fogunk még
+          dolgozni:</p>
+        <pre>       CIKLUS AMÍG van még szám, ADDIG
+          szám = következő elem
+          KI: szám
+       CIKLUS VÉGE</pre>
+        <p>Ha elemzed a fenti kódot, azt látod, hogy addig fog a ciklus futni,
+          amíg nem ér végig a számokon, amik mondjuk egy tömbben is lehetnek.
+          Minden ciklusmagban beállítja a számot és kiírja az értékét,
+          azaz lényegében kiírja a tömb vagy lista elemeit.</p>
+        <p><strong>Összegzés tétele</strong></p>
+        <p>A feladat egyszerű, egy sorozat elemeit kell összesíteni. A pszeudokód:</p>
+        <pre>      összeg = 0
+        CIKLUS AMÍG van még szám, ADDIG
+        szám = következő elem
+        összeg = összeg + szám
+        CIKLUS VÉGE</pre>
+        <p><strong>Számlálás tétele</strong></p>
+        <p>Itt össze kell számolni, hogy egy bizonyos feltétel hány elemre igaz.</p>
+        <pre>      db = 0
+      CIKLUS AMÍG van még szám, ADDIG
+          szám = következő elem   
+          HA igaz a feltétel szám-ra, AKKOR
+              db = db+1
+          FELTÉTEL VÉGE
+      CIKLUS VÉGE</pre>
+        <p><strong>Szélsőérték keresése (maximum vagy minimum)</strong></p>
+        <p>A dolog egyszerű. Van mondjuk egy számsorozatod, és meg kell mondanod,
+          hogy melyik a legkisebb vagy legnagyobb szám, azaz a szélsőértékeket keresed.</p>
+        <pre>        legnagyobb = első elem
+        CIKLUS AMÍG van még szám, ADDIG
+            szám = következő elem
+            HA szám > legnagyobb, AKKOR
+                 legnagyobb = szám
+            FELTÉTEL VÉGE
+        CIKLUS VÉGE
+          </pre>
+        <p><strong>Eldöntés tétele</strong></p>
+        <p>Megvizsgálod, szerepel-e olyan elem a sorozatban, melyre igaz a feltétel.
+          Például: prímszám-e. Ahogy találsz egy osztót, ami nem önmaga és nem 1, tudod hogy nem az.</p>
+        <pre>        találat = HAMIS
+        CIKLUS AMÍG van elem ÉS NEM találat
+            szám = következő elem
+            HA igaz a feltétel szám-ra, AKKOR
+              találat = IGAZ
+            FELTÉTEL VÉGE
+        CIKLUS VÉGE</pre>
+        <p><strong>Egyéb algoritmusok</strong></p>
+        <p>A későbbiekben más algoritmusokkal is foglalkozunk majd,
+          de a fenti négy képezi a programozási elmélet egyik alapkövét.
+        </p>
+        <h4 id="osszegzo">Összegző és számláló algoritmusok</h4>
+        <p>Itt a nevezetes algoritmusok vagy programozási tételek közül az első kettő kerül terítékre.
+          Nem lesz bonyolult, de kicsit hivatalosabban fogalmazok majd, ne ijedj meg.</p>
+        <p><strong>Összegzés</strong></p>
+        <p>Először lássuk az elméletet. Így nézett ki a pszeudokód:</p>
+        <pre>      összeg = 0
+            CIKLUS AMÍG van még szám, ADDIG
+            szám = következő elem
+            összeg = összeg + szám
+            CIKLUS VÉGE</pre>
+        <p>Példa:</p>
+        <a href="img/osszegzo.JPG" target="_blank"><img src="img/osszegzo.JPG" class="img-fluid" alt="osszegzo.JPG"></a>
+        <p><strong> Alapvető megállapítások:</strong></p>
+        <ul>
+          <li>Az "akkumulátor" változó az, amelyikben összegyűlik,
+            akkumulálódik az eredmény, ezt most összeg néven tüntettük fel.
+            Ezt először nulláznod kell, utána minden feldolgozott számot hozzá kell adnod.
+            Minden iteráció végén az addig látott számok összegét fogja így tartalmazni.
+            Ha esetleg egyszer sem hajtódott volna végre a ciklus, akkor pedig nullát.</li>
+          <li>A ciklus ebben az esetben a teljes sorozaton végig kell hogy iteráljon,
+            mivel az összes számot össze szeretnéd adni.</li>
+          <li>A pszeudokódban külön kiemelheted a következő számot egy változóba szám néven,
+            majd ezt adod hozzá az összeghez.
+            Ez a konkrét implementációnál, azaz amikor valamilyen nyelven lekódolod a példát,
+            már egy sorban is könnyen megoldható.</li>
+        </ul>
+        <p>JavaScript kód:</p>
+        <a href="img/osszegzo2.JPG" target="_blank"><img src="img/osszegzo2.JPG" class="img-fluid"
+            alt="osszegzo2.JPG"></a>
+        <p>A kód magyarázata:</p>
+        <ul>
+          <li>Az első és utolsó sor, azaz a tömb létrehozása és a console-ra való kiírás
+            nem volt benne a pszeudokódban, ezek a konkrét implementáció során már szükségesek.
+          </li>
+          <li>Az algoritmus megvalósítása négy sor csupán,
+            a konkrét implementáció általában rövidebb a pszeudokódnál.
+          </li>
+          <li>Az akkumulálásra, azaz az összeg összegyűjtésére az "amount" nevű változót definiáltam,
+            hoztam létre.
+          </li>
+          <li>A ciklus egy egyszerű for ciklus.
+            Azért választottam ezt, mert szinte az összes nyelvben ez a szintaxisa.
+            Az iterációk száma megegyezik a tömb elemeinek a számával.
+          </li>
+          <li>A ciklusmagban a "+=" rövidítést használtam,
+            ez az összetett operátor mindig a jobb oldalon álló értékkel növeli a változó értékét.
+          </li>
+        </ul>
+        <p>Fontos: Az akkumulátor változót mindig a cikluson kívül hozzuk létre és inicializáljuk!</p>
+        <p><strong>Számlálás</strong></p>
+        <p>Itt is jöjjön az elmélet:</p>
+        <pre>      db = 0
+          CIKLUS AMÍG van még szám, ADDIG
+              szám = következő elem   
+              HA igaz a feltétel szám-ra, AKKOR
+                  db = db+1
+              FELTÉTEL VÉGE
+          CIKLUS VÉGE</pre>
+        <p>Példa:</p>
+        <a href="img/szamlalo.JPG" target="_blank"><img src="img/szamlalo.JPG" class="img-fluid" alt="szamlalo.JPG"></a>
+        <p>Alapvető megállapítások:</p>
+        <ul>
+          <li>Nagyon hasonló az összegzéshez, két dologban különbözik tőle.</li>
+          <li>A db nevű változó nem az összeget tartalmazza, hanem az elemek számát.</li>
+          <li>Csak azokat az elemeket számolja bele az eredménybe, amelyekre egy adott feltétel igaz.</li>
+        </ul>
+        <p>JavaScript kód:</p>
+        <a href="img/szamlalo2.JPG" target="_blank"><img src="img/szamlalo2.JPG" class="img-fluid"
+            alt="szamlalo2.JPG"></a>
+        <p>A kód magyarázata:</p>
+        <ul>
+          <li>A megfelelő elemek számát a "count" nevű változóba gyűjtöttem.</li>
+          <li>Az összes elemen végigiterál a ciklus.</li>
+          <li>Ha az adott elem értéke nagyobb, mint 3, akkor növeli a "count" változó értékét eggyel.</li>
+        </ul>
+        <h4 id="szelsoeseldontendo">Szélsőérték és eldöntés algoritmusa</h4>
+        <p>Most pedig megmutatom a szélsőérték keresés és az eldöntés algoritmusát.</p>
+        <p><strong>Szélsőérték</strong></p>
+        <p>Ha van egy nem üres sorozat, akkor két szélső érték lesz benne,
+          a legkisebb és a legnagyobb. Szokták maximum vagy minimum kiválasztásnak is hívni ezt az eljárást.
+          Előfeltétele, hogy az elemek egymással összehasonlíthatóak legyenek, azaz el tudjuk dönteni,
+          hogy két elem közül melyik a nagyobb. Először a pszeudokód:</p>
+        <pre>        legnagyobb = első elem
+              CIKLUS AMÍG van még szám, ADDIG
+                  szám = következő elem
+                  HA szám > legnagyobb, AKKOR
+                       legnagyobb = szám
+                  FELTÉTEL VÉGE
+              CIKLUS VÉGE
+                </pre>
+        <a href="img/szelsoertek.JPG" target="_blank"><img src="img/szelsoertek.JPG" class="img-fluid"
+            alt="szelsoertek.JPG"></a>
+        <p>Alapvető megállapítások:</p>
+        <ul>
+          <li>A szélsőérték keresés során mindig azt feltételezzük, hogy az első elem a kiválasztott,
+            azaz a legkisebb vagy legnagyobb, attól függően, hogy melyiket keressük.
+            Ez azt jelenti, hogy a legnagyobb az első elem.</li>
+          <li>Ha nem rendezett az elemek listája, akkor minden elemen végig kell iterálnunk
+            egy ciklussal, mivel nem tudjuk, hogy vannak-e még nagyobb vagy kisebb elemek a listában.</li>
+          <li>Az eldöntés tételéhez nagyon hasonlóan, itt is van egy feltétel a ciklusmagban.
+            Ez a feltétel azt vizsgálja, hogy a legutóbb maximumnak tartott értékhez képest
+            a jelenlegi érték nagyobb-e.
+            Ha igen, akkor a jelenlegi értéket állítja be legnagyobb értéknek.</li>
+          <li>A minimum kiválasztás gyakorlatilag megegyezik ezzel,
+            csupán a relációs jelet kell megfordítanunk a ciklusmagban, amikor vizsgáljuk a feltételt.
+          </li>
+        </ul>
+        <p>JavaScript kód:</p>
+        <a href="img/szelsoertek2.JPG" target="_blank"><img src="img/szelsoertek2.JPG" class="img-fluid"
+            alt="szelsoertek2.JPG"></a>
+        <p>A kód magyarázata:</p>
+        <ul>
+          <li>Feltételezzük, hogy az első elem a legnagyobb,
+            ezért be is állítjuk a tömb első elemét a "biggest" értékeként.
+          </li>
+          <li>A ciklussal a teljes tömbön végigiterálunk.
+          </li>
+          <li>Ha az adott elem nagyobb, mint a feltételezett legnagyobb, azaz a "biggest",
+            akkor a "biggest"-et felülírjuk az elemre.
+          </li>
+          <li>Végül logoljuk az eredményt.</li>
+        </ul>
+        <p><strong>Eldöntés</strong></p>
+        <p>Itt is kezdjük az elmélettel! Az alapfeladat kétféle lehet. Vagy azt akarjuk eldönteni,
+          hogy egy sorozatban van-e valamilyen tulajdonsággal rendelkező elem, vagy azt,
+          hogy minden elem rendelkezik-e az adott tulajdonsággal.
+          Mindkét esetben logikai érték lesz a válasz.</p>
+        <p>Lássuk először az első esetet:</p>
+        <pre>        találat = HAMIS
+            CIKLUS AMÍG van elem ÉS NEM találat
+                szám = következő elem
+                HA igaz a feltétel szám-ra, AKKOR
+                  találat = IGAZ
+                FELTÉTEL VÉGE
+            CIKLUS VÉGE</pre>
+        <a href="img/eldontendo.JPG" target="_blank"><img src="img/eldontendo.JPG" class="img-fluid"
+            alt="eldontendo.JPG"></a>
+        <p>Alapvető megállapítások:</p>
+        <ul>
+          <li>A "találat" változót hamis értékkel definiáljuk, azaz azt felételezzük, hogy nincs találat.
+          </li>
+          <li>A ciklus feltételében nem csak az elemek szerepelnek, azt is vizsgáljuk,
+            hogy van-e találat. Így ha már van találat, akkor a ciklus nem fog többet lefutni.
+          </li>
+          <li>Ha az aktuális elem a keresett tulajdonságú, akkor a "találat" igazzá válik,
+            és a ciklus futása leáll.
+          </li>
+          <li>Ha egyetlen elemre sem igaz a feltétel, akkor a ciklus az összes elemet bejárja,
+            és utána a "találat" változó hamis marad.
+          </li>
+        </ul>
+        <p>Lássunk egy példát: arra keressük a választ, hogy a számok sorozatában van-e hatos.
+        </p>
+        <a href="img/eldontendo2.JPG" target="_blank"><img src="img/eldontendo2.JPG" class="img-fluid"
+            alt="eldontendo2.JPG"></a>
+        <p>A kód magyarázata:</p>
+        <ul>
+          <li>Az "i" változó fogja tárolni, hogy éppen hol járunk a tömb iterálása során.
+          </li>
+          <li>A "find" tartalmazza a keresett értéket.
+          </li>
+          <li>A "found" változó tárolja, hogy megtaláltuk-e a keresett értéket.
+          </li>
+          <li>Ha a vizsgálat igaz, azaz a tömb aktuálisan vizsgált elemének értéke megegyezik a keresett
+            értékkel, akkor a "found" változót true értékre állítjuk.
+            Ennek hatására a ciklus nem fog többet lefutni, mivel a feltétele hamissá válik.
+          </li>
+          <li>Végül logoljuk az eredményt.
+          </li>
+        </ul>
+        <p>Most nézzük meg azt az esetet, amikor az a kérdés,
+          hogy minden elem rendelkezik-e az adott tulajdonsággal.
+          Ha az éppen vizsgált elem megfelelő, az még nem ad nekünk választ,
+          tovább kell vizsgálódnunk. Ha az aktuális elem nem megfelelő, akkor viszont biztosak
+          lehetünk benne, hogy a válasz hamis, azaz nem minden elem rendelkezik az adott tulajdonsággal.
+          Ez alapján a módosított algoritmus a következő:</p>
+        <pre>            mind = IGAZ
+            CIKLUS AMÍG van elem ÉS mind
+                elem = következő elem
+                HA nem a keresett tulajdonságú az elem, AKKOR
+                    mind = HAMIS
+                FELTÉTEL VÉGE
+              CIKLUS VÉGE</pre>
+        <p>Alapvető megállapítások:</p>
+        <ul>
+          <li>A "mind" változót igaz értékkel definiáljuk, azaz azt felételezzük,
+            hogy minden elem megfelelő.
+          </li>
+          <li>A ciklus feltételében azt is vizsgáljuk, hogy még mindig igaz-e "mind"-re.
+            Így ha már valamelyik elem nem volt megfelelő, akkor a ciklus nem fog többet lefutni.
+          </li>
+          <li>Ha az aktuális elem nem az adott tulajdonságú,
+            akkor a "mind" hamissá válik, és a ciklus futása leáll.
+          </li>
+          <li>Ha minden elemre igaz a feltétel, akkor a ciklus az összes elemet bejárja,
+            és utána a "mind" változó igaz marad.
+          </li>
+        </ul>
+        <p>Lássunk egy példát: arra keressünk a választ, hogy számok sorozatában mind pozitív-e.
+        </p>
+        <p>JavaScript kód:</p>
+        <a href="img/eldontendo3.JPG" target="_blank"><img src="img/eldontendo3.JPG" class="img-fluid"
+          alt="eldontendo3.JPG"></a>
+        <p>A kód magyarázata:</p>
+        <ul>
+          <li>Az "i" változó fogja tárolni, hogy éppen hol járunk a tömb iterálása során.
+          </li>
+          <li>Az "all" változó tárolja, hogy mind pozitív-e.
+          </li>
+          <li>Ha a vizsgálat igaz, azaz a tömb aktuálisan vizsgált elemének értéke nem pozitív, 
+            akkor az "all" változót false értékre állítjuk. Ennek hatására a ciklus nem fog többet lefutni, 
+            mivel a feltétele hamissá válik.
+          </li>
+          <li>Végül logoljuk az eredményt.
+          </li>
+        </ul>
+
+
+
+
+
       </div>
       <div class="col-12 col-md-3 col-lg-2 p-0">
         <div id="menusor">
           <ul class="almenu">
             <li><a href="#javaScript">Bevezető</a></li>
-            <li><a href="#if">If</a></li>
-            <li><a href="#ifelse">If... else</a></li>
-            <li><a href="#ternary">Ternary operator</a></li>
-            <li><a href="#for">Loop with for()</a></li>
-            <li><a href="#while">Looping with while()</a></li>
+            <ul>
+              <li><a href="#if">If</a></li>
+              <li><a href="#ifelse">If... else</a></li>
+              <li><a href="#ternary">Ternary operator</a></li>
+              <li><a href="#for">Loop with for()</a></li>
+              <li><a href="#while">Looping with while()</a></li>
+            </ul>
+            <li><a href="#elemi">Elemi algoritmusok</a></li>
+            <ul>
+              <li><a href="#osszegzo">Összegző és számláló algoritmusok</a></li>
+              <li><a href="#szelsoeseldontendo">Szélsőérték és eldöntés algoritmusa</a></li>
+            </ul>
           </ul>
         </div>
       </div>
