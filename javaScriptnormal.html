@@ -41,7 +41,7 @@
           illetve a <strong>Loops: for, while, do...while</strong> <em>(hurkok)</em>.</p>
         <p>Ezek az kulcsszavak <em>(keyword)</em>, végrehajtják azt, amit belerakunk a {} közé, akár egy soros, akár
           több.</p>
-        <h4 id="if">If</h4>
+        <h2 id="if">If</h2>
         <p>Ahogy a nevében is benne van, feltételekkel dolgozhatunk benne. A Boolean-en alapszik,
           tehát az igaz <em>(true)</em> és a hamis <em>(false)</em> eredmények születhetnek. De persze példázva ez is
           könnyebb.
@@ -88,7 +88,7 @@
           </tbody>
         </table>
         <!-- ez a táblázat lehetne kicsit igényesebb is -->
-        <h4 id="ifelse">If ... else</h4>
+        <h2 id="ifelse">If ... else</h2>
         <p>Azt is meg kell adnunk a programsornak, hogy mi van akkor, ha az if hamis <em>(false)</em>. Erre való az else
           <em>(egyébként)</em>.
         </p>
@@ -101,11 +101,11 @@
           hogy a zárójelben true, vagy false érték van-e. Fontos észrevenni, hogy itt már csak egy egyetlen egyenlőség
           jel van.</p>
         <a href="img/ifelse3.JPG" target="_blank"><img src="img/ifelse3.JPG" class="img-fluid" alt="ifelse3.JPG"></a>
-        <h4 id="ternary">Ternary operator (feltételezés)</h4>
+        <h2 id="ternary">Ternary operator (feltételezés)</h2>
         <p>Lehet a magyar megfelelője nem a legjobb, de talán érthető.
           A lényeg, hogy rövidíti az "if"-et. Persze itt is a példa segít talán a legtöbbet.</p>
         <a href="img/ternary.JPG" target="_blank"><img src="img/ternary.JPG" class="img-fluid" alt="ternary.JPG"></a>
-        <h4 id="for">Loop with for()</h4>
+        <h2 id="for">Loop with for()</h2>
         <p>Néha arra van szükség, hogy néhány kód ismétlődjön. Itt is a példa a legcélravezetőbb.</p>
         <p>A „for” keyword zárójelében van egy statement <em>(utasítás)</em>, ami annyit mond, hogy az „i” egyenlő
           0-val.
@@ -133,6 +133,11 @@
           Fontos megjegyezni, hogy egy for ciklust bármikor átírhatsz while ciklusba.
           Tehát amit for-al megvalósíthatsz, azt while-al is, csupán a szintaxis más.
         </p>
+        <p><strong>Iteráció</strong></p>
+        <p><strong>Az iteráció egy függvény ismételt végrehajtása az előző függvényértéken.</strong> Magyarul, az
+          iteráció azt jelenti,
+          hogy egy sorozat elemeit végigjárom és mindegyiken végrehajtok egy műveletet, és ez a végigjárás valamilyen
+          sorban történik, azaz nem összevissza ugrálok a sorban található elemeken.</p>
         <p><strong>Tömb bejárása ciklussal</strong></p>
         <p>Ha szeretnéd egy kollekció összes elemét végigjárni,
           és valamilyen vizsgálatot vagy műveletet végezni velük,
@@ -153,7 +158,71 @@
           Ezek után a {}-ban dolgok történnek meg, majd ha az állítás, miszerint az „i” még mindig kisebb,
           mint 3, akkor vége is van, ha nem, akkor visszaugrik az „i++”-ra, ami hozzáad egyet az „i”-hez.
           Az „i” amúgy hagyományosan a loop-okhoz szokták kötni, mint változó (variable).</p>
-        <h4 id="while">Looping with while()</h4>
+        <h4 id="forIn">For... in ciklus</h4>
+        <p>Több dologban különbözik a for ciklustól.</p>
+        <ul>
+          <li>Nincs benne iterátor változó.</li>
+          <li>A megadott Array vagy objektum kulcsait járja be.</li>
+        </ul>
+        <p>Paraméterei:
+        </p>
+        <ul>
+          <li><strong>kulcs változó:</strong> ebben tárolja mindig az aktuális kulcsot.</li>
+          <li><strong>kollekció:</strong> az a tömb vagy objektum, amelyet bejár a ciklus.
+          </li>
+        </ul>
+        <p>Egy egyszerű for ... in ciklus:</p>
+        <p>A k változó a key rövidítése, ez tárolja az aktuális kulcsot.</p>
+        <a href="img/forin.JPG" target="_blank"><img src="img/forin.JPG" class="img-fluid" alt="forin.JPG"></a>
+        <p><strong>Tömbre és objektumra is</strong></p>
+        <p>Nagy előnye az alap for ciklussal szemben, hogy tömbre és objektumra is alkalmazható, nem kell hozzá külön
+          változó, hogy végig tudd járni az objektumok kulcsait.
+          A példában ugyanazt a ciklust használom fel tömbhöz és objektumhoz is:
+        </p>
+        <a href="img/forin2.JPG" target="_blank"><img src="img/forin2.JPG" class="img-fluid" alt="forin2.JPG"></a>
+        <p>Előnyei</p>
+        <ul>
+          <li>Tömbre és objektumra is működik.</li>
+          <li>Egyszerűbb szintaxis.</li>
+        </ul>
+        <p>Hátránya</p>
+        <ul>
+          <li>Nehezebb a futását limitálni, mert nincs külön iterátora.</li>
+        </ul>
+        <p>A for ... in ciklus esetén is használható a continue és break utasítás.</p>
+        <a href="img/forin3.JPG" target="_blank"><img src="img/forin3.JPG" class="img-fluid" alt="forin3.JPG"></a>
+        <h4 id="forOf">For... of ciklus</h4>
+        <p>Ezt a fajta ciklust az ES2015 szabvány hozta be a JS-be. A for... of ciklus hasonló a for... in -hez, de
+          vannak
+          különbségek.</p>
+        <ul>
+          <li>Nem a kulcsokon, hanem az értékeken megy végig</li>
+          <li>Array-like, tömb szerű változókon lehet alkalmazni</li>
+        </ul>
+        <p>Példa a használatára:</p>
+        <a href="img/forof.JPG" target="_blank"><img src="img/forof.JPG" class="img-fluid" alt="forof.JPG"></a>
+        <p>Azt írja ki, hogy 11, 21, 31. A tömb az iterálható, azt be tudja járni a for... of ciklus és egyesével
+          kiolvassa az elemeit. Ezután növeltem eggyel az értékeket és kiírtam a console-ra.</p>
+        <p><strong>String bejárása for...of ciklussal:</strong></p>
+        <a href="img/forof2.JPG" target="_blank"><img src="img/forof2.JPG" class="img-fluid" alt="forof2.JPG"></a>
+        <p>Azonosan tudod elvégezni, mint a tömb esetén. Emlékszel, a String nagyon hasonlóan viselkedik, mint az Array.
+          A kimenet "b", "o", "o" lesz.
+        </p>
+        <p><strong>Objektum bejárása for... of ciklussal (ha nem kell a kulcs):</strong></p>
+        <a href="img/forof3.JPG" target="_blank"><img src="img/forof3.JPG" class="img-fluid" alt="forof3.JPG"></a>
+        <p>Nem konkrétan az objektumot járja be a példában a ciklus, hanem kiolvasom az objektumból az értékeket, amit
+          az Object.values() metódus egy tömbben ad vissza. Ezt a tömböt már be tudom járni, mert az Array az
+          iterálható. Így viszont elveszítem a kulcsokat és csak az értékekkel tudok dolgozni a ciklusban. Ennek akkor
+          van veszélye, ha nem abban a sorrendben vannak az adatok az objektumban, ahogy én arra számítottam.
+        </p>
+        <p><strong>Objektum bejárása for... of ciklussal (ha kell a kulcs):</strong></p>
+        <a href="img/forof4.JPG" target="_blank"><img src="img/forof4.JPG" class="img-fluid" alt="forof4.JPG"></a>
+        <p>Miért érdekes ez? Mert ha meghívod az Object.entries() metódust és átadsz neki egy objektumot, akkor egy
+          tömböt ad vissza, amiben al-tömbökben az egyes tulajdonságok [key,value] formában benne vannak. Az egyes
+          bejegyzések entry első eleme tehát a kulcs, a második az érték.
+        </p>
+
+        <h2 id="while">Looping with while()</h2>
         <p>Ez egy univerzális módja a dolgoknak,
           ugyanis a a "for" ciklusnál a deklarált változó csak a blokkon belül létezik,
           tehát miután lement a "for" ciklus, nem tudod kiírati az i értékét (csak a blokkon belül)</p>
@@ -568,37 +637,34 @@
         </p>
         <p>JavaScript kód:</p>
         <a href="img/eldontendo3.JPG" target="_blank"><img src="img/eldontendo3.JPG" class="img-fluid"
-          alt="eldontendo3.JPG"></a>
+            alt="eldontendo3.JPG"></a>
         <p>A kód magyarázata:</p>
         <ul>
           <li>Az "i" változó fogja tárolni, hogy éppen hol járunk a tömb iterálása során.
           </li>
           <li>Az "all" változó tárolja, hogy mind pozitív-e.
           </li>
-          <li>Ha a vizsgálat igaz, azaz a tömb aktuálisan vizsgált elemének értéke nem pozitív, 
-            akkor az "all" változót false értékre állítjuk. Ennek hatására a ciklus nem fog többet lefutni, 
+          <li>Ha a vizsgálat igaz, azaz a tömb aktuálisan vizsgált elemének értéke nem pozitív,
+            akkor az "all" változót false értékre állítjuk. Ennek hatására a ciklus nem fog többet lefutni,
             mivel a feltétele hamissá válik.
           </li>
           <li>Végül logoljuk az eredményt.
           </li>
         </ul>
-
-
-
-
-
       </div>
       <div class="col-12 col-md-3 col-lg-2 p-0">
         <div id="menusor">
           <ul class="almenu">
             <li><a href="#javaScript">Bevezető</a></li>
+            <li><a href="#if">If</a></li>
+            <li><a href="#ifelse">If... else</a></li>
+            <li><a href="#ternary">Ternary operator</a></li>
+            <li><a href="#for">Loop with for()</a></li>
             <ul>
-              <li><a href="#if">If</a></li>
-              <li><a href="#ifelse">If... else</a></li>
-              <li><a href="#ternary">Ternary operator</a></li>
-              <li><a href="#for">Loop with for()</a></li>
-              <li><a href="#while">Looping with while()</a></li>
+              <li><a href="#forIn">For... in ciklus</a></li>
+              <li><a href="#forOf">For... of ciklus</a></li>
             </ul>
+            <li><a href="#while">Looping with while()</a></li>
             <li><a href="#elemi">Elemi algoritmusok</a></li>
             <ul>
               <li><a href="#osszegzo">Összegző és számláló algoritmusok</a></li>

@@ -1,5 +1,5 @@
-const user = {name:"JohnDoe",age:33};
+let user = { name: "Kiss Ramóna", age: 22 };
 
-user = {name:"BlackJack",age:100};
-
-// UncaughtTypeError: Assignmenttoconstantvariable.
+for ( let entry of Object.entries(user) ) {
+	console.log('${entry[0]} : ${entry[1]}');
+}
