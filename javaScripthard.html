@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanulóoldal</title>
+  <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css az aloldalaknak/javascript.css">
+</head>
+
+<body id="oldalteteje">
+  <header>
+    <h1 id="javaScript">javaScript (hard)</h1>
+  </header>
+  <main class="container-fluid">
+    <div class="row no-gutters">
+      <nav class="col-12 col-md-3 col-lg-2 navbar">
+        <ul class="navmenu">
+          <li><a href="index.html"><strong>Főoldal</strong></a></li>
+          <li><a href="github.html"><strong>GitHub</strong></a></li>
+          <li><a href="javaScript.html"><strong>JavaScript (easy)</strong></a></li>
+          <li><a href="javaScriptnormal.html"><strong>JavaScript (normal)</strong></a></li>
+          <li><a href="javaScripthard.html"><strong>JavaScript (hard)</strong></a></li>
+        </ul>
+      </nav>
+      <div class="col-12 col-md-6 col-lg-8 tartalom">
+        <h2 id="form">Form elements</h2>
+        <p>A HTML elemeknek van egy speciális csoportja, ezek az űrlap elemek.
+          Abban különböznek a többi elemtől, hogy lehet értékük.
+          Ez az érték tipikusan az, amit a honlap látogatói beírnak.
+          Először meg fogjuk keresni az oldalon az adott elemet, majd kiolvassuk az értéket, amit tartalmaz.
+          Erre azért van szükség, hogy le tudjuk ellenőrizni a bevitt adatok helyességét (validálni tudjuk őket).</p>
+        <p><strong>querySelector</strong> - elemek kiválasztása</p>
+        <p>Ez a querySelector() érdekes állatfajta. Ha a nevét két részre bontod,
+          jobban megérted hogy mire való:</p>
+        <p><strong>query:</strong> lekérés, lekérdezés, ami ebben az esetben egy HTML elem megkeresését jelenti
+          az oldalon</p>
+        <p><strong>selector:</strong> a lekérés az elem CSS szelektorával történik</p>
+        <p>Tehát nem kell hozzá új technikákat megtanulnod,
+          ahhoz hogy lekérj egy HTML elemet, elég ha ismered a CSS szelektorokat.
+          Remélem még nem felejtetted el őket, mert most nagyon kelleni fognak.</p>
+        <p>Példák:</p>
+        <a href="img/formelements.JPG" target="_blank"><img src="img/formelements.JPG" class="img-fluid"
+            alt="formelements.JPG"></a>
+        <p><strong>value</strong> - az érték</p>
+        <p>Oké, most már ki tudsz választani egy elemet az oldalon,
+          de mit kezdesz vele? Az űrlap elemeknek van egy speciális tulajdonsága: a value.
+          Ez mondja meg az elembe bevitt aktuális értéket. Most egy komplex példában kiválasztok egy elemet,
+          és kiolvasom az értékét.
+        </p>
+        <p>Űrlap HTML kódja (nem teljes):</p>
+        <a href="img/formelements2.JPG" target="_blank"><img src="img/formelements2.JPG" class="img-fluid"
+            alt="formelements2.JPG"></a>
+        <p>Tehát van egy input-om, aminek a neve "amount", és az "order" id-jű űrlapban van.
+          Akkor ezt a js kódban az alábbi módon is ki tudom választani
+          (írhatsz más szelektort is, a lényeg, hogy egyértelmű legyen):</p>
+        <p>Input kiválasztása:</p>
+        <a href="img/formelements3.JPG" target="_blank"><img src="img/formelements3.JPG" class="img-fluid"
+            alt="formelements3.JPG"></a>
+        <p>Fontos: kiválasztottam az input-ot, és elmentettem egy változóba, hogy később is tudjak vele
+          dolgozni. A változó egy input elemet jelent. Minden, amit az input elemmel csinálni tudok,
+          a változóval is tudok.</p>
+        <p>Érték kiolvasása:</p>
+        <a href="img/formelements4.JPG" target="_blank"><img src="img/formelements4.JPG" class="img-fluid"
+            alt="formelements4.JPG"></a>
+        <p>Egyszerű mint a pofon. Az "amountInput" változó az inputot jelenti,
+          ahova a vásárló beviszi, hogy hány terméket szeretne.
+          Ennek a value tulajdonságában van a szám, ami nekem kell a rendelés árának a kalkulálásához.
+          Ezt kiolvasom, és elmentem az amount változóba.
+          Viszont számmá alakítom, mert a böngésző az input-ok értékét String-ben adja vissza,
+          én pedig majd matekozni szeretnék vele.</p>
+        <h2 id="events">Events</h2>
+        <p>Az események (angolul events) alapvetőek a js programozásban.
+          Amikor a felhasználó kattint az oldaladon, vagy görget az egérrel,
+          esetleg bevisz valamilyen adatot vagy elküld egy űrlapot, mindig történik egy esemény,
+          amit figyelni tudsz. A közös bennük, hogy nem tudod előre, hogy pontosan mikor fognak bekövetkezni.</p>
+        <p><strong>onClick attribútum</strong></p>
+        <p>Sokféle eseménye létezik az elemeknek attól függően, hogy milyen fajták. Nem mutatom meg az összeset,
+          most elég lesz az onclick nevű. A nevéből is látszik, hogy akkor következik be ez az esemény,
+          amikor rákattintanak egy HTML elemre. Ez lehet gomb, div vagy gyakorlatilag bármilyen látható elem,
+          amire lehet kattintani.
+        </p>
+        <a href="img/events.JPG" target="_blank"><img src="img/events.JPG" class="img-fluid" alt="events.JPG"></a>
+        <p>Készítettem egy Bootstrap gombot zöld színben. Az onclick attribútummal megadtam egy eseménykezelőt,
+          ami a js kódban lesz definiálva.
+        </p>
+        <p>Eseménykezelő függvény:</p>
+        <a href="img/events2.JPG" target="_blank"><img src="img/events2.JPG" class="img-fluid" alt="events2.JPG"></a>
+        <p>Megjegyzés: a függvényeket részletesen megvizsgáljuk majd, a feladat szempontjából elég, ha tudod,
+          hogy egyszerű kódblokkok, amelyek több parancsot fognak össze.</p>
+        <p>Összefoglalva:</p>
+        <p>Beállítottam az eseménykezelőt az onclick attribútummal,
+          aminek az értéke annak a függvénynek a neve, ami el fog indulni,
+          amikor rákattintanak a gombra. A függvényben vizsgálom az űrlapon bevitt értékeket,
+          hogy helyesek-e vagy akár számításokat is végezhetek.</p>
+        <h2 id="fugvenyek">Functions (fügvények)</h2>
+        <p>A függvény egy egyszerű gép. Bedobáljuk a hozzávalókat, elvégzi a feladatát,
+          és a végén kidobja az eredményt.</p>
+        <p>Emlékszel még második osztályban? Bedobom a gépbe a hármat és a négyet, tizenkettőt dob ki.
+          Mit csinál a gép? Nyilván összeszorozza a két kapott paramétert.
+          Ugyanígy lehet elképzelni a függvényeket.</p>
+        <p>A functions (funkciók) egy kódblock, aminek neve van, amit használhatsz,
+          vagy egy változót is használhatsz, amely a függvényre mutat az adott kódblokk végrehajtásakor.
+          Ez segít abban, hogy egy kódot újra használni tudj.</p>
+        <h4 id="functionHasznalat">Function (fügvény) használata</h4>
+        <p>Függvényt a function kulcsszóval hozhatsz létre. Két lehetőséged van:</p>
+        <p>function testFunction() {...} - ez a függvény deklaráció</p>
+        <p>let testFunction() {...} - ez a függvény expression (úgy adod meg, mint egy változót)
+        </p>
+        <p>A két megadási mód között nincs működésbeli különbség.</p>
+        <p>A teljes szintaxis:</p>
+        <a href="img/function.JPG" target="_blank"><img src="img/function.JPG" class="img-fluid" alt="function.JPG"></a>
+        <p>Jön most egy egyszerű funkció. A két zárójelben van a funkciónk body-ja, ez az ami végrehajtódik,
+          ha a funkciót meghívjuk. A végén meghívtuk a kapcsos zárójel után a funkciót, ami olyan,
+          mint amikor megadunk mondjuk egy "let"-et, és amikor leírjuk a változóját, kiadja az értékét.</p>
+        <a href="img/function2.JPG" target="_blank"><img src="img/function2.JPG" class="img-fluid"
+            alt="function2.JPG"></a>
+        <p><strong>Invocation</strong> - függvény meghívása</p>
+        <p>Az invocation, azaz a függvény meghívása azt jelenti, hogy elindítod a függvényt,
+          az pedig végrehajtja a feladatát. Ezt a függvény neve után tett zárójelekkel teheted meg.
+          Ezt hívják függvényhívásnak, azaz call-nak:</p>
+        <a href="img/function3.JPG" target="_blank"><img src="img/function3.JPG" class="img-fluid"
+            alt="function3.JPG"></a>
+        <p><strong>Function Expressions</strong></p>
+        <p>Deklarálhatjuk is a funkciókat.</p>
+        <a href="img/function4.JPG" target="_blank"><img src="img/function4.JPG" class="img-fluid"
+            alt="function4.JPG"></a>
+        <p>Itt már elhagyható a function() után a név, mert deklaráltuk egy "let"-el. El is érdemes hagyni, mert nem
+          futna le, ha véletlenül ott hagynánk és úgy próbálnánk a funkcióra hivatkozni.
+        </p>
+        <p><strong>Passing Information to Functions</strong></p>
+        <p>A "function" utáni zárójelbe adhatunk több infót is.</p>
+        <a href="img/function5.JPG" target="_blank"><img src="img/function5.JPG" class="img-fluid"
+            alt="function5.JPG"></a>
+        <p>Ebben az esetben az történt, hogy a zárójelbe raktunk két dolgot is,
+          azokkal pedig dolgoztunk a kapcsos zárójelen belül.</p>
+        <p>Amikor meghívjuk a funkciót, akkor a zárójelbe belerakjuk azokat a dolgokat,
+          amiket szeretnénk, hogy a funkció dolgozza át.</p>
+        <p>Ha nem rakunk bele annyit, amennyi meg van adva, akkor az undefined.</p>
+        <p><strong>Function Return Values</strong></p>
+        <p>Ha egy függvény nem ad vissza semmilyen adatot miután végzett a feladatával,
+          azt eljárásnak szoktuk hívni. A függvények a futásuk végén visszaadnak valamilyen értéket.
+          Ezt a return kulcsszóval tudod meghatározni.</p>
+        <p>A függvényből a return kulcsszóval is kaphatunk infókat.</p>
+        <a href="img/function6.JPG" target="_blank"><img src="img/function6.JPG" class="img-fluid"
+            alt="function6.JPG"></a>
+        <p>Ilyenkor nem a függvényben van az utasítást, a return visszadobja a műveletet, de nem csinál vele semmit. A
+          fenti példában tehát a kapcsos zárójel után ezért is kell a console.log, mert amúgy nem menne most ki. Tehát a
+          return röviden azt csinálja, hogy a függvényhívás helyére küldi vissza az adatot.</p>
+        <p><strong>Function Scope</strong></p>
+        <p>A funkcióknak van egy saját hatóköre. Ezek a paraméterek, és a lokális változói a funkciói.
+        </p>
+        <a href="img/function7.JPG" target="_blank"><img src="img/function7.JPG" class="img-fluid"
+            alt="function7.JPG"></a>
+        <p><strong>Using Functions to Modify Web Pages</strong></p>
+        <p><strong>Accessor</strong></p>
+        <p>Az innerHTML egy accessor, mert el lehet érni vele egy bizonyos tulajdonságot olvasásra és írásra is.
+        </p>
+        <p>Egy elem HTML tartalmának kiolvasása:
+        </p>
+        <a href="img/function8.JPG" target="_blank"><img src="img/function8.JPG" class="img-fluid"
+            alt="function8.JPG"></a>
+        <p>Mi történt?</p>
+        <p>Kiválasztottam az "order" id -jű űrlap "message" osztályú elemét.
+          Az innerHTML tulajdonság segítségével kiolvastam az aktuális tartalmát, és elmentettem egy változóba.</p>
+        <p><strong>Tartalom módosítása</strong></p>
+        <p>Korábban már volt olyan function, ami módosította a honlapot. A formnál az előző oldalon egy inner.HTML-el
+          mutattunk rá egy elemre.</p>
+        <p>Azoknak a HTML elemeknek, amelyeknek van lezáró tag-je (azaz nem self-closed elemek) lehet tartalma. Az
+          innerHTML tulajdonság js alól elérhető, és ki lehet vele olvasni, vagy módosítani is lehet az elemek
+          tartalmát, azaz a bennük található HTML kódot.
+        </p>
+        <p>Most kompletten megmutatom neked, hogyan lehet mondjuk kiírni a rendelés összegét egy p elembe.
+        </p>
+        <p>Az űrlap HTML kódja:</p>
+        <a href="img/function9.JPG" target="_blank"><img src="img/function9.JPG" class="img-fluid"
+            alt="function9.JPG"></a>
+        <p>Tehát van egy űrlapod, benne az amount mezővel, egy gombbal és egy message paragrafussal az üzenetnek.
+        </p>
+        <p>A JS kód:</p>
+        <a href="img/function10.JPG" target="_blank"><img src="img/function10.JPG" class="img-fluid"
+            alt="function10.JPG"></a>
+        <p>A függvény utolsó sora az érdekes most számodra. A priceField változó a p elemen belüli span elemet
+          jelenti, ahol az összeg megjelenik. Ennek a tartalmát módosítottam a teljes összegre (totalAmount).
+        </p>
+        <h2 id="cleanCode">Clean Code</h2>
+        <p>Ahhoz, hogy a kódod később is ismerős legyen, illetve hogy mások is megértsék, fontos hogy tisztán és
+          átláthatóan dolgozz. A változóknál már foglalkoztunk kicsit a jó nevekkel, itt most kibővítve vesszük át a
+          dolgot.
+        </p>
+        <p>Fontos: célunk az, hogy olyan kódot írjunk, ami úgy olvasható mintha mondatokat olvasnánk.
+        </p>
+        <p><strong>Elnevezési szabályok</strong>
+        </p>
+        <p>A változók és függvények nevei alapvető fontosságúak egy kódban. Nem kell sajnálni a karaktereket arra, hogy
+          beszédes neveket válassz.
+        </p>
+        <p><strong>Beszédes nevek</strong>
+        </p>
+        <a href="img/cleancode.JPG" target="_blank"><img src="img/cleancode.JPG" class="img-fluid"
+            alt="cleancode.JPG"></a>
+        <p>Nincs szükség kommentekre, ha kifejező az elnevezés.
+        </p>
+        <p>Ne legyen a név félrevezető:
+        </p>
+        <a href="img/cleancode2.JPG" target="_blank"><img src="img/cleancode2.JPG" class="img-fluid"
+            alt="cleancode2.JPG"></a>
+        <p>Nevezd át az osztályt, metódust, változót, stb., amikor a jelentése változik.
+        </p>
+        <p><strong>O és I kerülése:</strong></p>
+        <p>A kisbetűs L és nagybetűs O használata is félreinformálhat, mert úgy néznek ki, mint a 0 (nulla) és az 1
+          (egy).
+        </p>
+        <p>Használj könnyen kiejthető neveket:
+        </p>
+        <a href="img/cleancode3.JPG" target="_blank"><img src="img/cleancode3.JPG" class="img-fluid"
+            alt="cleancode3.JPG"></a>
+        <p><strong>Kommentek</strong></p>
+        <p>Ritkán írj kommenteket!</p>
+        <ul>
+          <li>Ha sűrűn jelennek meg kommentek a kódban, elkezdünk nem törődni velük.
+          </li>
+          <li>Tartogasd a kommenteket olyan speciális esetekre, amikor a figyelem felhívására van szükség.
+          </li>
+          <li>A jó komment olvasója hálás lesz, hogy az a komment megíródott.
+          </li>
+        </ul>
+        <p>Informatív komment Valóban plusz információt közöl az olvasóval:</p>
+        <a href="img/cleancode4.JPG" target="_blank"><img src="img/cleancode4.JPG" class="img-fluid"
+            alt="cleancode4.JPG"></a>
+        <p><strong>Formázás</strong></p>
+        <p>Fontos a formázás? Amikor a forráskódod olvasója ránéz a kódodra, akkor először akaratlanul is annak
+          formázását figyeli meg (és nem a neveket vagy valami mást). A formázás a kommunikációról szól. Egy jól
+          "kommunikáló" kódot könnyű változtatni és karbantartani, tehát a cégnek pénzt takarít meg.</p>
+        <p>Mi számít a formázásnál?
+        </p>
+        <ul>
+          <li>Fájlméret
+          </li>
+          <li>Függőleges formázás
+          </li>
+          <li>Vízszintes formázás
+          </li>
+          <li>Indentáció</li>
+        </ul>
+        <p>Fájlméret</p>
+        <ul>
+          <li>Rövid fájlméreteket tarts fenn!
+          </li>
+          <li>De mi számít rövidnek? A statisztikák arra mutatnak rá, hogy a modern szoftverek átlagosan 50-60 soros
+            fájlokat tartalmaznak, míg más szoftverek 200-at.
+          </li>
+        </ul>
+        <p>Függőleges formázás - Üres sorok elválasztó eszközként
+        </p>
+        <a href="img/cleancode5.JPG" target="_blank"><img src="img/cleancode5.JPG" class="img-fluid"
+            alt="cleancode5.JPG"></a>
+        <p>A változók definícióit a konstruktorban elválasztottam a metódus hívásoktól.
+        </p>
+        <p>Vízszintes formázás - sorok hossza
+        </p>
+        <p>Tartsd a sorok hosszát maximum 80 karakternél. Így nem kell soha vízszintesen görgetni, amikor a kódot
+          olvasod.
+        </p>
+        <p>Indentáció</p>
+        <p>Az indentáció azt jelenti, hogy egyes sorok beljebb kezdődnek a többinél.
+        </p>
+        <ul>
+          <li>A szóköz használata jobb, mert minden szerkesztőben ugyanakkora lesz, függetlenül a tab méretétől.
+          </li>
+          <li>2 vagy 4 szóköz is lehet.
+          </li>
+          </li>
+          <li>De: használja mindenki ugyanazt az indentációs stílust a csapatban!
+          </li>
+        </ul>
+        <p>Függvények</p>
+        <p>Egy függvény egy és csakis egy dolgot csináljon!
+        </p>
+        <p>Akkor jó a függvény, ha már nem lehet értelmesen több másik függvénybe kiszervezni a működését.
+        </p>
+        <ul>
+          <li>4 - 6 sor az ideális hosszúság, 10 már sok.
+          </li>
+          <li>A függvények nevénél igét vagy ige szerkezetet válassz.
+          </li>
+          <li>A függvénynek maximum 3 argumentuma - paramétere legyen.
+          </li>
+        </ul>
+        <p><strong>Összefoglalás</strong></p>
+        <p>A fenti szabályok a legtöbb esetben hasznosak amikor dolgozol. De sokszor előfordul, hogy a csapat más
+          szabályokban egyezik meg praktikussági okokból, ebben az esetben természetesen azok az irányadóak.
+        </p>
+        <h2 id="array">Array (tömbök)</h2>
+        <p>Értékek indexelt halmaza. Ez a tömb. Úgy kell elképzelni, mint egy polc, ahová felpakoljuk a dolgokat.
+        </p>
+        <p>Az index az a mutató, amivel eléred a tömb egyes elemeit. Tehát minden elemnek van egy száma a tömbön belül,
+          amivel le tudod kérni az értékét, vagy módosítani tudod.</p>
+        <p>A tömbökbe szabadon elhelyezhetsz Number, String, Boolean, Object sőt akár Array típusú elemeket is. Ha
+          tömbbe tömböt teszel, akkor azt többdimenziós tömbnek is nevezik.
+        </p><strong>Dinamikus</strong>
+        <p>JavaScript esetén a tömb dinamikus, ami azt jelenti, hogy bármikor vehetsz fel új elemet, vagy törölhetsz
+          meglévőket. Ez nem minden programnyelv esetén van így, a legtöbbször előre meg kell adnod a tömböd hosszát. De
+          szerencsére mi js-ben dolgozunk, úgyhogy ez legyen a Java-sok és a C#-osok gondja :)</p>
+        </p><strong>Mixed</strong>
+        <p>Másik különbség például a Java nyelvvel szemben, hogy lehet mixelt a tömb, azaz egy tömbön belül különböző
+          típusú elemeket is tárolhatsz.</p>
+        <h4 id="tombLetrehozasa">Tömbök létrehozása</h4>
+        <p>Új tömböt legegyszerűbben a szögletes zárójelek használatával hozhatsz létre.
+        </p>
+        <p>Az alábbi példában egy három elemű tömböt definiálok:
+        </p>
+        <a href="img/array.JPG" target="_blank"><img src="img/array.JPG" class="img-fluid" alt="array.JPG"></a>
+        <p><strong>Hozzáférés a tömb elemeihez, az index</strong></p>
+        <p>Amikor elemeket adsz a tömbhöz, a JavaScript értelmező automatikusan megszámozza azokat.</p>
+        <p>JavaScriptben a tömb indexek csak számok lehetnek.
+        </p>
+        <p>FONTOS: az index mindig 0-val kezdődik!</p>
+        <p>Azaz a tömb első elemének indexe 0, és nem 1.</p>
+        <p>A példa azt mutatja meg, hogy egy tömb elemeit hogyan éred el és hogyan módosíthatod az indexük segítségével:
+        </p>
+        <a href="img/array2.JPG" target="_blank"><img src="img/array2.JPG" class="img-fluid" alt="array2.JPG"></a>
+        <p><strong>Többdimenziós tömbök</strong></p>
+        <p>Ezeknél egy tömböt egy másik tömbbe ágyaznak. Úgy képzeld el, mint egy Excel táblát, ahol a sorok a külső
+          tömb elemei, a belső tömbök pedig a cellákat tartalmazzák.</p>
+        <p>Például:</p>
+        <a href="img/array3.JPG" target="_blank"><img src="img/array3.JPG" class="img-fluid" alt="array3.JPG"></a>
+        <p>A példában a tömb második eleme szintén egy tömb.</p>
+        <p>A beágyazott tömb második elemének elérése: arr[1][1]</p>
+        <p>isArray(), tömb azonosítása</p>
+        <p>A munkád során előfordul, hogy meg kell állapítanod egy változóról, hogy Array típusú-e?
+          A typeof utasítás a tömböket Object típusúnak ismeri fel, ezért nem alkalmas az azonosításukra. Erre a
+          célra az Array objektum isArray metódusa szolgál. Ha megadsz neki egy változót, akkor megállapítja, hogy
+          tömb-e.</p>
+        <p>A példában a tömb esetén true értéket kapsz vissza, ami azt jelenti hogy igaz - azaz tömbbel van dolgod.
+          Ellenkező esetben az eredmény false - hamis - azaz nem tömböt adtál át az isArray metódusnak:</p>
+        <a href="img/array4.JPG" target="_blank"><img src="img/array4.JPG" class="img-fluid" alt="array4.JPG"></a>
+        <h4 id="arrayMetodusok">Array metódusok</h4>
+        <p>A tömbök esetén számos metódus áll rendelkezésre az adatok kereséséhez, ellenőrzéséhez, a tömbök vágásához
+          vagy egyesítéséhez. Most csak a legalapvetőbbeket mutatom meg, később a függvények megismerése után
+          visszatérünk még a magasabb szintű metódusokra is.</p>
+        <p><strong>push()</strong></p>
+        <p>Segítségével új elemet tudsz felvenni a tömb végére. Azaz az így felvett elem a tömböd utolsó eleme lesz.
+        </p>
+        <p>Fontos, hogy ez a metódus megváltoztatja az eredeti tömböt, azaz nem kell felüldefiniálnunk ahhoz, hogy a
+          módosítások érvénybe lépjenek. Miután a metódus lefutott, a tömb új hosszát adja vissza.
+        </p>
+        <p>FONTOS: módosítja az eredeti tömböt.</p>
+        <p><strong>pop()</strong></p>
+        <p>A push()-tól eltérően nem hozzáad, hanem elvesz egy elemet a tömb végéről.
+          A törölt elemet adja vissza, és szintén azonnal módosul az eredeti tömb.
+        </p>
+        <p>FONTOS: módosítja az eredeti tömböt.</p>
+        <p>A példában a push() és a pop() működését is bemutatjuk:</p>
+        <a href="img/array5.JPG" target="_blank"><img src="img/array5.JPG" class="img-fluid" alt="array5.JPG"></a>
+        <p><strong>unshift()</strong></p>
+        <p>A push() -hoz hasonlóan működik, csak a tömb elejére ad hozzá új elemet, azaz eggyel hátrébb tolja az
+          elemeket. Hatására minden meglévő tömbelem indexe eggyel nőni fog.</p>
+        <p>FONTOS: módosítja az eredeti tömböt.</p>
+        <p><strong>shift()</strong></p>
+        <p> Ez pedig a pop() párja, egy elemet kivesz a tömb elejéről, és a többit eggyel előre tolja. Hatására minden
+          meglévő tömbelem indexe eggyel csökkenni fog.</p>
+        <p>FONTOS: módosítja az eredeti tömböt.</p>
+        <p>A példában az unshift() és a shift() működését is megmutatom neked:</p>
+        <a href="img/array6.JPG" target="_blank"><img src="img/array6.JPG" class="img-fluid" alt="array6.JPG"></a>
+        <h4 id="parameteratadas">Paraméterek átadása másolással és referencia szerint</h4>
+        <p><strong>Primitívek átadása érték szerint</strong></p>
+        <p>Amikor paramétereket adsz át egy függvénynek, akkor érdekes dolgok történnek a háttérben, ezért nem árt
+          tisztában lenni azzal, hogy a függvények mit kezdenek a nekik átadott adatokkal.</p>
+        <p><strong>Primitívek átadása érték szerint</strong></p>
+        <p><strong>Primitív változó típusok:</strong> Boolean, Number, String, Undefined, Null
+        </p>
+        <p>a primitív típusokat másolja a JS. Azaz, amikor átadsz egy ilyen változót a függvénynek, akkor egy másolatot
+          készít az eredetiről és azzal dolgozik.</p>
+        <a href="img/array7.JPG" target="_blank"><img src="img/array7.JPG" class="img-fluid" alt="array7.JPG"></a>
+        <p>Miért ez a kimenet?</p>
+        <ul>
+          <li>Létrehoztam a varOne és varTwo változókat 10 és 20 értékekkel.
+            Amikor átadtam őket a függvénynek, akkor kiolvasta az értéküket és ahogy a paraméterlistában megadtam
+            callByValue(varOne,varTwo) azon a néven létrehozott két lokális változót a függvényben és az eredeti
+            értékeket bemásolta ebbe az két új változóba. Amikor kiíratom a függvényben az értékeket, látszik hogy
+            megváltoztak.</li>
+          <li>Mégis amikor az eredeti értékeket újra kiíratom a függvényhívás után, azok változatlanok maradnak. Azért,
+            <strong>mert nem az eredeti változókkal dolgozik a függvény, csak a másolatukkal.</strong>
+          </li>
+        </ul>
+        <p><strong>Objektumok átadása referencia szerint</strong></p>
+        <p>Miket nevezek itt objektumoknak? Azokat a változókat, amelyek nem primitív típusok. Itt elsősorban a már
+          tanult tömbökre gondolok és lesznek még az Object típusok, amelyeket hamarosan megismersz.
+        </p>
+        <p>Tehát a következő szabályok rájuk vonatkoznak.
+        </p>
+        <p><strong>Paraméter átadás referencia szerint:</strong> az objektumokat nem másolja a JS. Minden változónak van
+          egy címe a memóriában. Amikor egy objektumot kap a függvény, akkor létrejön egy új név a lokális változónak,
+          de a memóriacím, ahova mutat, az ugyanaz lesz. Tehát két különböző néven ugyanazt a változót éred el.</p>
+        <a href="img/array8.JPG" target="_blank"><img src="img/array8.JPG" class="img-fluid" alt="array8.JPG"></a>
+        <p>Miért ez a kimenet?</p>
+        <ul>
+          <li>Létrehoztam a varArray tömböt [10] értékkel.
+          </li>
+          <li>Amikor átadtam a függvénynek, szándékosan más nevet választottam a lokális változónak: arr, mivel az
+            teljesen mindegy, hogy mi a neve a függvényen belül. A függvényben megváltoztattam a 0 indexű elemet és
+            kiírtam. Látszik, hogy meg is változott.
+          </li>
+          <li>Most jön a meglepetés: amikor az eredeti tömböt újra kiíratom a függvényhívás után, akkor is megváltozott.
+            Azért, <strong>mert az eredeti változó referenciájával dolgozik, tehát ugyanazt a helyet módosítja a
+              memóriában.</strong>
+          </li>
+        </ul>
+        <p>Előnyei:
+        </p>
+        <ul>
+          <li>a függvényre nézve globális objektumokat is könnyen tudsz módosítani
+          </li>
+          <li>takarékoskodik a memóriával, mivel nem foglal új memóriaterületet mint a másolásnál
+          </li>
+        </ul>
+        <p>Hátrányai:
+        </p>
+        <ul>
+          <li>az átadott objektumokat akaratodon kívül módosíthatod
+          </li>
+        </ul>
+        <h2 id="objektumok">Objektumok</h2>
+        <p>Adatok tárolása kulcs-érték párok segítségével. Ez az objektum. Abban a tekintetben hasonlít a tömbökre, hogy
+          egy kollekció, amiben bármilyen típusú adatot tárolhatsz, akár tömböket vagy másik objektumokat is. Más
+          programnyelvekben nem így hívják ezt az adattípust, de mindegyikben van megfelelője.</p>
+        <p>Hasonló a tömbökhöz, amik szintén egy helyre tartozó adatokat gyűjtenek össze, viszont itt nem számokkal
+          vannak megnevezve az adatok, hanem vannak kulcsai (name, e-mail, address, stb.)
+        </p>
+        <p><strong>Rugalmas adattárolás objektumok segítségével</strong></p>
+        <p><strong>key - kulcs</strong></p>
+        <p>Az objektumok esetén nem automatikusan indexelődnek az elemek, mint a tömb esetén, hanem mi határozzuk meg a
+          kulcs-érték párokat.</p>
+        <p>A kulcsoknak minden esetben String típusúaknak kell lenniük.
+        </p>
+        <p><strong>value - érték</strong></p>
+        <p>A kulcsokkal jelölt értékeket tulajdonságoknak is nevezik. Az alábbi példában egy egyszerű objektum
+          létrehozását láthatod. Figyeld meg, hogy az objektumot kapcsos zárójelek határolják, a kulcs-érték párokat
+          vesszők, a kulcsot pedig kettőspont választja el az értéktől:
+        </p>
+        <a href="img/objektumok.JPG" target="_blank"><img src="img/objektumok.JPG" class="img-fluid"
+            alt="objektumok.JPG"></a>
+        <p><strong>Object.keys()</strong> - az objektum kulcsai</p>
+        <p>Az objektumok esetén fontos, hogy tudd mit tárolsz bennük. Mivel az objektum elemeit a kulcsok segítségével
+          éred el, ezért nem árt tudni, hogy milyen kulcsok vannak egy objektumban. Ezeket a kulcsokat pedig az
+          Object.keys metódus adja vissza.</p>
+        <p>Az Object.keys metódus tömb formában adja vissza a kapott objektum kulcsait.</p>
+        <p>Az objektum tulajdonságait úgy tudod elérni, hogy az objektum neve után ponttal elválasztva megadod a
+          kiválasztott tulajdonság kulcsát, vagy szögletes zárójelek között [ ] String -ként adod meg:
+        </p>
+        <a href="img/objektumok2.JPG" target="_blank"><img src="img/objektumok2.JPG" class="img-fluid"
+            alt="objektumok2.JPG"></a>
+        <p><strong>Object.values()</strong> - Az objektum értékeit tudom lekérni</p>
+        <a href="img/objektumok3.JPG" target="_blank"><img src="img/objektumok3.JPG" class="img-fluid"
+            alt="objektumok3.JPG"></a>
+        <p><strong>Object.entries()</strong> - Ez mindent megmutat</p>
+        <a href="img/objektumok4.JPG" target="_blank"><img src="img/objektumok4.JPG" class="img-fluid"
+            alt="objektumok4.JPG"></a>
+        <p><strong>Az objektum hossza</strong></p>
+        <p>Az objektumoknak nincs length tulajdonsága, mint a tömböknek, ezért más módszerhez kell folyamodnod, ha
+          szeretnéd megtudni az elemeiknek a számát. Erre a legegyszerűbb módszer, ha nem az elemeiket, hanem a
+          kulcsaikat számolod meg.
+        </p>
+        <p>Figyelem: a példában láncolt metódus hívást alkalmazunk.
+        </p>
+        <p>Ennek lényege, hogy egy függvény által visszaadott típusra azonnal meghívod annak szabványos metódusát vagy
+          lekéred egy adott tulajdonságát, jelen esetben a tömb elemeinek számát, azaz a tömb hosszát.</p>
+        <p>Az Object.keys tömböt ad vissza, majd annak le is kérheted azonnal a length tulajdonságát:
+        </p>
+        <a href="img/objektumok5.JPG" target="_blank"><img src="img/objektumok5.JPG" class="img-fluid"
+            alt="objektumok5.JPG"></a>
+        <p><strong>Konstans objektumok használata</strong></p>
+        <p>Arról már beszéltünk, hogy nem lehet új értéket adni a const kulcsszóval létrehozott változóknak. De tömbök
+          és objektumok esetén van egy kiskapu.
+        </p>
+        <p>Mi is történik, amikor egy változót a const kulcsszóval hozol létre?
+        <p><strong>Read only:</strong> csak olvasható referenciát hoz létre az értékre. Tehát rámutat, referenciát
+          jelent egy memória területre ahol
+          az értéke van. De nem lehet rajta keresztül a memória terület tartalmát módosítani.</p>
+        </p>
+        <p><strong>Mutable -Immutable</strong></p>
+        <p><strong>Mutable:</strong> az adott változó értéke meg tud változni, tud mutálódni.
+        </p>
+        <p><strong>Immutable:</strong> értelemszerűen az előbbi ellentéte. Tehát az ilyen változót vagy értéket lehet
+          olvasni, de írni - változtatni nem.</p>
+        <p><strong>const és Object</strong></p>
+        <p>Először készítek egy objektumot a let kulcsszó használatával és módosítom egy másikra, mert mutable, azaz meg
+          lehet változtatni az értékét:
+        </p>
+        <a href="img/objektumok6.JPG" target="_blank"><img src="img/objektumok6.JPG" class="img-fluid"
+            alt="objektumok6.JPG"></a>
+        <p>Nem történt semmi probléma, a kód lazán lefutott. A user azonosító egy értékre mutat a memóriában. Amikor
+          felülírom, nincs semmi baj, az azonosító onnan kezdve egy másik értékre fog mutatni.
+        </p>
+        <p>Most ugyanezt megpróbálom const kulcsszóval is, ami immutable adatkötést hoz létre:
+        </p>
+        <a href="img/objektumok7.JPG" target="_blank"><img src="img/objektumok7.JPG" class="img-fluid"
+            alt="objektumok7.JPG"></a>
+        <p>Az lett amire számítottam, nem megy a dolog. Nem lehet hozzárendelni új értéket a const változóhoz.
+        </p>
+        <p><strong>Constant property change:</strong></p>
+        <a href="img/objektumok8.JPG" target="_blank"><img src="img/objektumok8.JPG" class="img-fluid"
+            alt="objektumok8.JPG"></a>
+        <p>A const kulcsszóval definiált objektumok és tömbök tulajdonságait / elemeit meg tudom változtatni!</p>
+        <p>Miért? Azért, mert az objektum és a tömb különálló változókat tárol a memóriából és csak összefogja őket.
+          Amikor az objektum egy tulajdonságát megváltoztatom, azzal az objektum kötése az azonosítóhoz nem fog
+          megváltozni, csupán az egyik tulajdonságát módosítottam.</p>
+
+      </div>
+      <div class="col-12 col-md-3 col-lg-2 p-0">
+        <div id="menusor">
+          <ul class="almenu">
+            <li><a href="#form">Form elements</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#fugvenyek">Functions</a></li>
+            <ul>
+              <li><a href="#functionHasznalat">Function használata</a></li>
+            </ul>
+            <li><a href="#cleanCode">Clean Code</a></li>
+            <li><a href="#array">Array</a></li>
+            <ul>
+              <li><a href="#tombLeterehozasa">Tömbök létrehozása</a></li>
+              <li><a href="#arrayMetodusok">Array metódusok</a></li>
+              <li><a href="#parameteratadas">Paraméterek átadása</a></li>
+            </ul>
+            <li><a href="#objektumok">Objektumok</a></li>
+            <li><a href="#oldalteteje">Vissza az oldal tetejére</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </main>
+  <script src="./js az aloldalaknak/javaScript.js"></script>
+</body>
+
+</html>
