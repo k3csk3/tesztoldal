@@ -27,6 +27,7 @@
           <li><a href="javaScript.html"><strong>JavaScript (easy)</strong></a></li>
           <li><a href="javaScriptnormal.html"><strong>JavaScript (normal)</strong></a></li>
           <li><a href="javaScripthard.html"><strong>JavaScript (hard)</strong></a></li>
+          <li><a href="javaScriptnightmare.html"><strong>JavaScript (nightmare)</strong></a></li>
         </ul>
       </nav>
       <div class="col-12 col-md-6 col-lg-8 tartalom">
@@ -189,6 +190,64 @@
         <p>A függvény utolsó sora az érdekes most számodra. A priceField változó a p elemen belüli span elemet
           jelenti, ahol az összeg megjelenik. Ennek a tartalmát módosítottam a teljes összegre (totalAmount).
         </p>
+        <h2 id="arrow">Az arrow function</h2>
+        <p>Elérkeztünk a függvényekkel kapcsolatos újítások legzseniálisabb részéhez, azaz az Arrow function-ökhöz.</p>
+        <p>Nézzük meg mi is ez az új CSODA. Az előző leckékben már tettem rá említést, most a gyakorlatban is
+          megmutatom, hogy is teszik egyszerűbbé az életünket az arrow function-ök. Az arrow function segítségével
+          egyszerűbben tudsz létrehozni függvényeket, mint függvény kifejezéssel.
+        </p>
+        <p>Emlékszel még erre:</p>
+        <a href="img/arrow.JPG" target="_blank"><img src="img/arrow.JPG" class="img-fluid" alt="arrow.JPG"></a>
+        <p>Ugyanazt kapjuk a kimeneten. De mi is történt? A callback függvényünket átírtuk egy újfajta szintaxisra.
+        </p>
+        <ul>
+          <li>elhagytuk a function kulcsszót</li>
+          <li>az arrow function mindig anonim lesz</li>
+          <li>A paraméter körüli zárójeleket töröltük (EZT CSAK AKKOR TEHETJÜK MEG HA 1 PARAMÉTER VAN!)</li>
+          <li>Elhagytuk a kapcsos zárójeleket (NEM MINDIG!)</li>
+          <li>Egy => jelet írunk a paramétere(k) után</li>
+          <li>Elhagytuk a return kulcsszót</li>
+        </ul>
+        <p>Nézzünk egy másik egyszerűbb példát is:</p>
+        <a href="img/arrow2.JPG" target="_blank"><img src="img/arrow2.JPG" class="img-fluid" alt="arrow2.JPG"></a>
+        <p>Tehát ahogy említettem, ha nem csak egy egyszerű utasításunk van a függvényben, a kapcsos zárójeleket
+          kitesszük, illetve ha nincs kapcsos zárójel az azt jelenti, hogy visszatérési értékünk lesz. Nézzünk még egy
+          érdekes példát arra az esetre, hogy ha a függvénynek egyáltalán nem lenne paramétere:
+        </p>
+        <a href="img/arrow3.JPG" target="_blank"><img src="img/arrow3.JPG" class="img-fluid" alt="arrow3.JPG"></a>
+        <p>Nézzünk még egy szép összetett real life példát funkcionális programozási szemléletmóddal így a végére:
+        </p>
+        <p>Van egy webshopunk, és a html kódból meg kell mondanunk, hogy az általunk árult szerverek összesített ára
+          mennyi:</p>
+        <a href="img/arrow4.JPG" target="_blank"><img src="img/arrow4.JPG" class="img-fluid" alt="arrow4.JPG"></a>
+        <p>Mindössze annyit teszünk, hogy használjuk a tömb metódusainkat, most már Arrow function-ökkel kombinálva.
+          (Az Array.from() szintén hamarosan kifejtésre kerül, csakúgy, mint az includes(), ami leginkább az
+          indexOf()-ra hasonlít)
+        </p>
+        <ul>
+          <li>Kigyűjtjük egy konstansba a price-list id-jú elemen belül az összes li-t, aminek a data-price attribútuma
+            meg van adva. (Az Array.from() -ról a későbbiekben részletesen).</li>
+          <li>Leszűrjük az elemeket, hogy a "Server" szót tartalmazó elemek maradjanak, tehát csak a szerverek árai
+            érdekelnek.</li>
+          <li>Tömböt készítünk ezen elemek áráról, mely érték már float -á lesz alakítva (kiszedjük a pontot), és
+            figyelünk a "," karakterekre is, melyeket "."-ra cserélünk.</li>
+          <li>A kapott összegeket összeadjuk.</li>
+        </ul>
+        <p>Arrow function és a return utasítás</p>
+        <a href="img/arrow5.JPG" target="_blank"><img src="img/arrow5.JPG" class="img-fluid" alt="arrow5.JPG"></a>
+        <p>Arrow function és a local binding</p>
+        <p>A javascript fejlesztők élete nem csak játék és mese. Az arrow function-nél nincs local binding. Tehát
+          nincs arguments, this super, new.target. Ha a arrow function-ön belül megpróbáljuk elérni, akkor a
+          parent scope lesz használva.
+        </p>
+        <p>Nézzünk egy példát this esetére, és hogy mikor jó nekünk az arrowfunction e tulajdonsága:</p>
+        <a href="img/arrow6.JPG" target="_blank"><img src="img/arrow6.JPG" class="img-fluid" alt="arrow6.JPG"></a>
+        <p>Ím látjuk, hogy ez szép, jó, és hasznos, szóval jöjjön is egy példa, hogy mikor NEM jó:
+        </p>
+        <p>Ilyen esetben - objektum metódusban - érdemes kerülni a használatát:</p>
+        <a href="img/arrow7.JPG" target="_blank"><img src="img/arrow7.JPG" class="img-fluid" alt="arrow7.JPG"></a>
+
+
         <h2 id="cleanCode">Clean Code</h2>
         <p>Ahhoz, hogy a kódod később is ismerős legyen, illetve hogy mások is megértsék, fontos hogy tisztán és
           átláthatóan dolgozz. A változóknál már foglalkoztunk kicsit a jó nevekkel, itt most kibővítve vesszük át a
@@ -513,9 +572,79 @@
           Amikor az objektum egy tulajdonságát megváltoztatom, azzal az objektum kötése az azonosítóhoz nem fog
           megváltozni, csupán az egyik tulajdonságát módosítottam.</p>
         <h2 id="metodusok">Metódusok</h2>
-
-
-
+        <p>A metódus (angolul method) azt jelenti, hogy egy dolgot hogyan csinálunk meg? Azaz a kivitelezés módját.</p>
+        <p>Az objektumoknak vannak tulajdonságai, ha egy objektum egy embert jelent, akkor például a magassága vagy a
+          haja színe. De vannak metódusai is, azaz amit tudnak csinálni. Ilyen lehet hogy tudnak beszélni, sétálni,
+          futni, stb. Tehát a metódus azt írja le, hogy egy adott objektum egy dolgot hogyan csinál?</p>
+        <p><strong>Beépített metódusok</strong></p>
+        <p>Találkoztál már metódusokkal, amiket bizonyos objektumokra meg lehet hívni. Array.isArray(),
+          Object.keys(), Object.entries() ismerősek? Ezek tipikus metódusok, amelyek már alapból meg vannak írva és
+          használhatod őket. A metódus gyakorlatilag egy függvény, ami egy objektumhoz van kötve és nem csak úgy "lóg a
+          levegőben".
+        </p>
+        <p><strong>Saját metódusok</strong></p>
+        <p>De te is bármikor készíthetsz egy metódust, most megmutatom hogyan.
+        </p>
+        <a href="img/metodusok.JPG" target="_blank"><img src="img/metodusok.JPG" class="img-fluid"
+            alt="metodusok.JPG"></a>
+        <p>Pár érdekes dolog</p>
+        <ul>
+          <li>A product objektum egyik tulajdonsága egy függvény. Ezt metódusnak hívjuk.</li>
+          <li>A metódus kulcs (neve) desc.</li>
+          <li>Ha meg akarod hívni, akkor így tudod: product.desc().</li>
+          <li>Fontosak a zárójelek, csak akkor fog lefutni, ha van utána kettő. Tudod, invocation, azaz a metódus
+            meghívása.</li>
+          <li>És amit a desc metódus visszaad, azt ki is írathatod mondjuk egy console.log -al.</li>
+        </ul>
+        <p><strong>This</strong></p>
+        <p>Ezt a szót az angolok akkor használják, ha rá akarnak mutatni valamire. Ez. Mindig egy adott objektumot
+          jelent. A kérdés, hogy mikor melyiket?</p>
+        <p><strong>Mikor mi a this?</strong></p>
+        <p>A globális objektumot jelenti, ami általában a window.
+        </p>
+        <p><strong>Hol?:</strong> a JS fájl gyökerében, függvényekben.</p>
+        <a href="img/this.JPG" target="_blank"><img src="img/this.JPG" class="img-fluid" alt="this.JPG"></a>
+        <p>Szóval ha csak úgy simán lekéred a JS dokumentum gyökerében, akkor a legfelső szintű objektum lesz, ami a
+          böngészőben a window.</p>
+        <p>A szülő objektumot jelenti.</p>
+        <p>Hol: metódusban.</p>
+        <a href="img/this2.JPG" target="_blank"><img src="img/this2.JPG" class="img-fluid" alt="this2.JPG"></a>
+        <p>Azt az elemet jelenti, amelyre végbement az esemény.</p>
+        <p>Hol: az eseménykezelő függvényben.
+        </p>
+        <a href="img/this3.JPG" target="_blank"><img src="img/this3.JPG" class="img-fluid" alt="this3.JPG"></a>
+        <p>Itt a this a button lesz.</p>
+        <p><strong>Objektum példa létrehozása</strong></p>
+        <p>Már elég sokszor leírtam, de nem lehet elégszer: az objektumok a való világban létező dolgokat jelentik.
+          Lehet objektum egy ember, állat, autó, ingatlan és még sok más is. Az objektum nem jeleníti meg az összes
+          tulajdonságát a dolgoknak, csak azokat amelyek számunkra fontosak.</p>
+        <p><strong>Tipikus user</strong></p>
+        <p>Alapvető objektum szokott lenni a user. Egy programot emberek használnak, akik belépnek, kilépnek, adatokkal
+          dolgoznak. Nagyon jó alanyok lesznek most egy kis objektum készítéshez:
+        </p>
+        <a href="img/objectpelda.JPG" target="_blank"><img src="img/objectpelda.JPG" class="img-fluid"
+            alt="objectpelda.JPG"></a>
+        <p>Ezt az objektumot egy olyan oldalon generáltattam, ahol lehet a programod teszteléséhez készíteni nagy JSON
+          tömböket (link a doksiknál). Ez a tömb egyik eleme. De ez nem igazi objektum még, csak egy JSON string. Igaz,
+          a JS kompatibilis vele, tehát ha így egy az egyben bemásolnád a kódodba akkor tudnád használni.</p>
+        <p><strong>Metódusok</strong></p>
+        <p>Mit ér az objektum metódus nélkül (sokat, de jobb ha van neki)? Átalakítok gyorsan néhány statikus
+          tulajdonságot metódusra, hogy ez is legyen gyakorolva. (nem írom ki a teljes kódot, csak a módosított
+          részeket, tehát így egy az egyben nem lehet lefuttatni)
+        </p>
+        <a href="img/objectpelda2.JPG" target="_blank"><img src="img/objectpelda2.JPG" class="img-fluid"
+            alt="objectpelda2.JPG"></a>
+        <p>A balance tulajdonságot Number típusként adom meg, mert lehet hogy lesznek vele matematikai műveletek
+          (csökkentés, növelés, stb...) és így praktikusabb. Ezért létrehozok egy getBalance metódust, ami formázva
+          adja vissza a felhasználó egyenlegét. Sőt, felveszek egy currency paramétert is $ alapértelmezett értékkel.
+          Ha megadják a pénznemet, amikor meghívják a metódust, akkor azt teszi elé, ha nem, akkor dollár lesz.</p>
+        <a href="img/objectpelda3.JPG" target="_blank"><img src="img/objectpelda3.JPG" class="img-fluid"
+            alt="objectpelda3.JPG"></a>
+        <p>Ez már csak ujjgyakorlat. A greeting metódus lett és az objektum name tulajdonságából veszi a
+          keresztnevet. Miért jó ez? Azért, mert ha megváltoztatod a nevet, akkor is jól fog működni. Mire gondolok? Ha
+          kiadom ezt a parancsot: user.name.first= "Maria" akkor megváltozik a keresztnév. Igen ám, de ha nem a
+          this.name.first-el olvasom ki, akkor továbbra is azt fogja kiírni, hogy HelloImelda!....
+        </p>
       </div>
       <div class="col-12 col-md-3 col-lg-2 p-0">
         <div id="menusor">
@@ -526,6 +655,7 @@
             <ul>
               <li><a href="#functionHasznalat">Function használata</a></li>
             </ul>
+            <li><a href="#arrow">Az arrow function</a></li>
             <li><a href="#cleanCode">Clean Code</a></li>
             <li><a href="#array">Array</a></li>
             <ul>

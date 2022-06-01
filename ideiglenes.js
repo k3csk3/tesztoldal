@@ -1,5 +1,6 @@
-let user = { name: "Kiss Ramóna", age: 22 };
+//getFullname:
 
-for ( let entry of Object.entries(user) ) {
-	console.log('${entry[0]} : ${entry[1]}');
+"name": {  "first": "Imelda",  "last": "Compton" },
+"getFullname": function() {
+ return `${this.name.last} ${this.name.first}`;
 }
