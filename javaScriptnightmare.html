@@ -173,7 +173,152 @@
         </ul>
         <p>Bővebben a példában:</p>
         <a href="img/dom11.JPG" target="_blank"><img src="img/dom11.JPG" class="img-fluid" alt="dom11.JPG"></a>
-
+        <p>Element.removeChild(node)</p>
+        <p>Egy kis szintaxis: node.removeChild(node) Nagyon hasonlít a testvérére az appendChild-ra, csak nem kell
+          elemet létrehozni.
+        </p>
+        <p>Lépésről lépésre:</p>
+        <ul>
+          <li>Kell egy Element, amiből az egyik child -ot el akarjuk távolítani. querySelector</li>
+          <li>Kell az az elem, amit el akarunk távolítani. querySelector</li>
+          <li>Végül az eltávolítás. Fontos, hogy csak child elemet lehet. removeChild</li>
+        </ul>
+        <p>Bővebben a példában:</p>
+        <a href="img/dom12.JPG" target="_blank"><img src="img/dom12.JPG" class="img-fluid" alt="dom12.JPG"></a>
+        <p>Egy elem szülője</p>
+        <p>Parent
+        </p>
+        <p>Angolul szülőt jelent, és az is. Ha egy elemnek lehetnek gyerekei, és meg lehet kérdezni, hogy hány gyereke
+          van, és akár keresni is lehet közöttük, ugyanígy ha a gyermek elem felől nézzük a dolgot, annak is működnie
+          kell. Jöjjön a kik a szüleid kérdés. Illetve pontosítok: ki a szülőd, mivel minden elemnek csak egyetlen
+          közvetlen szülője lehet.
+        </p>
+        <p>parentNode vs parentElement</p>
+        <p><strong>parentNode:</strong> az adott elem szülő node-ját adja vissza , mely lehet Element vagy gyökérelem
+          esetén a document.</p>
+        <p><strong>parentElement:</strong> az adott elem szülő elemét adja vissza, mely mindig egy Element, vagy
+          gyökérelem esetén null.</p>
+        <p>Fontos különbség van a node és az element között. A Node egy csomópont a dokumentumban, lehet egy
+          egyszerű textNode is, ami nem valódi HTML Element. Mert minden Element node, de nem minden node element :)
+        </p>
+        <a href="img/dom13.JPG" target="_blank"><img src="img/dom13.JPG" class="img-fluid" alt="dom13.JPG"></a>
+        <p>Munka a szülőkkel</p>
+        <p>
+          A példában elrejtem a span szülőjét a kíváncsi tekintetek elől:</p>
+        <a href="img/dom14.JPG" target="_blank"><img src="img/dom14.JPG" class="img-fluid" alt="dom14.JPG"></a>
+        <p><strong>Eseménykezelők hozzáadasa HTML elemekhez</strong></p>
+        <p>A JavaScriptben lehetőség van eseményeket figyelni, és a hatásukra valamilyen kódot futtatni. Ilyen esemény
+          például amikor betöltődik az oldal, vagy a felhasználó rákattint egy elemre.</p>
+        <p>= vs.addEventListener</p>
+        <p>Ha azt szeretnéd, hogy történjen valami, ha mondjuk egy gombra kattintanak, azt háromféleképpen is meg tudod
+          adni.
+        </p>
+        <ul>
+          <li>Element attribútummal: "<"elementonclick="myScript"">"</li>
+          <li>JavaScriptből hasonlóan: object.onclick=function()myScript;</li>
+          <li>addEventListenerrel: object.addEventListener("click",myScript);</li>
+        </ul>
+        <p>Az első kettőnél egy eseményre csak egy működést adhatsz meg, míg az addEventListener használatával többet
+          is.</p>
+        <p><strong>Fontos:</strong> addEventListener esetén nem kell az on szócska az esemény neve elé.</p>
+        <p><strong>window események</strong></p>
+        <p>A közös bennük, hogy nem felhasználói beavatkozásra történnek meg, hanem a böngésző működése váltja ki őket.
+          Nem csak a window-ra lehet őket megadni, a legtöbb elem esetén használhatóak.</p>
+        <p>A fontosabbak:</p>
+        <ul>
+          <li><strong>onload</strong> az objektum betöltődött</li>
+          <li><strong>onresize</strong> az objektumot átméretezték</li>
+          <li><strong>onscroll</strong> scrolloztak az objektumon</li>
+        </ul>
+        <p>Például figyelhetjük ha scrolloztak, és egy bizonyos távolsagra az oldal tetejétől kisebbre vehetjük a
+          fejlécet, vagy elrejthetünk bizonyos elemeket:</p>
+        <a href="img/dom15.JPG" target="_blank"><img src="img/dom15.JPG" class="img-fluid" alt="dom15.JPG"></a>
+        <p><strong>Az egér és az űrlapelemek eseményei</strong></p>
+        <p>A leggyakrabban figyelt események az egér események. Itt bejönnek a képbe a mobil eszközök is, mert ott már
+          nincs egér, hanem legtöbbször ujjal kezelik őket. Ezeknél a kattintás a tap-et, azaz a tapintást jelenti.
+        </p>
+        <p>A legfontosabbak:</p>
+        <ul>
+          <li>
+            <strongon>onclick</strongon> kattintás vagy tappintás, ha mobileszközről van szó
+          </li>
+          <li>
+            <strongon>onmouseover</strongon> az elem fölé viszik az egérmutatót (mobilon értelmetlen)
+          </li>
+          <li>
+            <strongon>onmouseout</strongon> az elemről elhúzzák az egérmutatót (mobilon értelmetlen)
+          </li>
+        </ul>
+        <p>Mindegyiket valamilyen konkrét HTML elemre, azaz Element típusú objektumra lehet beállítani, a fent
+          részletezett három mód valamelyikével:</p>
+        <a href="img/dom16.JPG" target="_blank"><img src="img/dom16.JPG" class="img-fluid" alt="dom16.JPG"></a>
+        <p><strong>onchange és onsubmit - form elemek</strong></p>
+        <p>Fontos értesülnöd róla, ha valaki piszkálja a formot.
+        </p>
+        <ul>
+          <li><strong>onchange</strong> input elemek értékének változását figyelheted.</li>
+          <li><strong>onsubmit</strong> a form (űrlap) elküldése előtt fut le, ezt figyelheted vele. Ha az eseménykezelő
+            függvény visszatérési értéke</li>
+          <li>false, akkor az űrlap nem kerül elküldésre.</li>
+        </ul>
+        <a href="img/dom17.JPG" target="_blank"><img src="img/dom17.JPG" class="img-fluid" alt="dom17.JPG"></a>
+        <h2 id="switch">A switch kapcsoló</h2>
+        <p>Ahogy a neve is mutatja, a switch egy kapcsoló. Több állása is lehet, egy változót vagy kifejezést vizsgál,
+          és annak az értéke alapján ugrik a megfelelő utasításhoz.</p>
+        <p>Használata:</p>
+        <p>Egy paramétere van, egy olyan változó vagy kifejezés, ami értéket ad vissza. Azután meg kell adni, hogy
+          milyen érték hatására milyen utasítás fusson le.</p>
+        <p>Kulcsszavak:</p>
+        <ul>
+          <li>switch(value) - a value az az érték, amit figyel a switch.</li>
+          <li>case value: kifejezés break; - ha a value megegyezik a vizsgált értékkel, lefut a kifejezés, utána break
+            utasítást teszünk, hogy a többi ne fusson le.</li>
+          <li>default: kifejez - ha egyik case sem volt igaz, akkor ez fog lefutni.</li>
+        </ul>
+        <p>Előnye, hogy gyorsabb, mint az else...if, viszont csak konkrét értékeket lehet vele vizsgálni, azaz például
+          kisebb-nagyobb logikai kifejezést nem tud értelmezni.
+        </p>
+        <p>Megkeresem a hét napjának nevét a száma alapján:
+        </p>
+        <a href="img/switch.JPG" target="_blank"><img src="img/switch.JPG" class="img-fluid" alt="switch.JPG"></a>
+        <h2 id="domwhileesfor">DOM manipuláció while és for ciklussal</h2>
+        <p>Most összetett struktúrákat, listákat, táblázatokat fogunk generálni js-el. Izgalmas lesz.
+        </p>
+        <p><strong>While ciklussal</strong></p>
+        <p>Bemelegítésnek készítek egy p elemekből álló listát while ciklussal:
+        </p>
+        <a href="img/domwhile.JPG" target="_blank"><img src="img/domwhile.JPG" class="img-fluid" alt="domwhile.JPG"></a>
+        <p>Mit tettem?
+        </p>
+        <ul>
+          <li>Létrehoztam a numbers tömböt.</li>
+          <li>Beállítottam az i változót, ez lett az index.</li>
+          <li>Megkerestem az első div-et az oldalon.</li>
+          <li>Addig futtattam a while ciklust, amíg kisebb az i, mint a tömb hossza.</li>
+          <li>A ciklusban létrehoztam egy p elemet és beállítottam a tartalmát a numbers tömb aktuális elemére.</li>
+          <li>Hozzáadtam a p elemet a container-hez, ami egy div.</li>
+          <li>Végül növeltem az i változót eggyel.</li>
+        </ul>
+        <p>Táblázat rajzolása objektumtömbből
+        </p>
+        <p>Amikor egy szerverről megkapod mondjuk a felhasználókat, az a legtöbbször egy tömb lesz, ami az egyes
+          felhasználókat objektumként tartalmazza. Erre szokták mondani, hogy objektumtömb, vagy objektumok tömbje.
+        </p>
+        <p>Legyen hát egy objektumtömböd:
+        </p>
+        <a href="img/domwhile2.JPG" target="_blank"><img src="img/domwhile2.JPG" class="img-fluid"
+            alt="domwhile2.JPG"></a>
+        <p>Minden felhasználó objektuma azonosan épül fel, de az adataik természetesen különbözőek.
+        </p>
+        <p><strong>DOM manipulálása for ciklussal</strong></p>
+        <p>Rajzolj táblázatot:
+        </p>
+        <a href="img/domfor.JPG" target="_blank"><img src="img/domfor.JPG" class="img-fluid" alt="domfor.JPG"></a>
+        <p>A helyes táblázathoz két egymásba ágyazott ciklus kell. Az egyikben létrehozod a sorokat, a másikban a
+          cellákat a sorokon belül. Amikor elkészíted a fenti példát a saját gépeden, használd a Google Chrome beépített
+          debug eszközét ahogy tanultuk. Állítsd meg minden sorban a ciklusokat és nézd végig a változók pillanatnyi
+          értékét.
+        </p>
 
 
 
@@ -184,6 +329,8 @@
         <div id="menusor">
           <ul class="almenu">
             <li><a href="#dom">A DOM</a></li>
+            <li><a href="#switch">A switch kapcsoló</a></li>
+            <li><a href="#domwhileesfor">DOM manipuláció while és for ciklussal</a></li>
             <li><a href="#oldalteteje">Vissza az oldal tetejére</a></li>
           </ul>
         </div>
