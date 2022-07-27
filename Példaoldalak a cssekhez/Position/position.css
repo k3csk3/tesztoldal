@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+}
+
+.static {
+    position: static;
+    border: solid 3px #73AD21;
+}
+
+.relative {
+    position: relative;
+    border: solid 3px #73AD21;
+    left: 30px;
+    top: 5px;
+}
+
+body > div:nth-child(5) > h1 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.fixed {
+    position: fixed;
+    border: solid 3px #73AD21;
+    bottom: 0;
+    right: 0;
+}
+
+.absolute {
+    position: absolute;
+    border: solid 3px #73AD21;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+}
+
+body > div:nth-child(9) > h1 {
+    position: sticky;
+    top: 0;
+    margin-top: 6em;
+}
+
+.sticky {
+    position: sticky;
+    border: solid 3px #73AD21;
+    bottom: 0;
+    background-color: #73AD21;
+}

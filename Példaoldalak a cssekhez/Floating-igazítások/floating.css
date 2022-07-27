@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+/*1. példa*/
+
+.imgContainer {
+    float: left;
+    width: 33.3%;
+    padding: 5px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*2. példa*/
+
+.imgContainer2 {
+    float: right;
+    width: 33.3%;
+    padding: 5px;
+}
+
+.clearfix2::after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: aqua;
+}
+
+.clearfix2 {
+    background-color: aqua;
+}
+
+/*3. példa*/
+
+.imgContainer3 {
+    float: right;
+    width: 33.3%;
+    padding: 5px;
+}
+
+.clearfix3::after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: aqua;
+}
+
+.clearfix3 {
+    background-color: aqua;
+}
+
+/*4. példa*/
+
+.imgContainer4 {
+    float: right;
+    width: 33.3%;
+    padding: 5px;
+}
+
+.clearfix4::after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: aqua;
+}
+
+.clearfix4 {
+    background-color: aqua;
+    display: inline-block;
+}
+
+.inlinePelda {
+    display: inline-block;
+}

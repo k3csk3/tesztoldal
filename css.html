@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanulóoldal</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css az aloldalaknak/cssacssnek.css">
+    <link rel="stylesheet" href="css az aloldalaknak/javascript.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body id="oldalteteje">
+    <header>
+        <h1>Tanulássegítő oldalak</h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row no-gutters">
+          <nav class="col-12 col-md-3 col-lg-2 navbar">
+            <ul class="navmenu">
+                <li><a href="index.html"><strong>Főoldal</strong></a></li>
+                <li><a href="css.html"><strong>CSS</strong></a></li>
+                <li><a href="github.html"><strong>GitHub</strong></a></li>
+                <li><a href="javaScript.html"><strong>JavaScript (easy)</strong></a></li>
+                <li><a href="javaScriptnormal.html"><strong>JavaScript (normal)</strong></a></li>
+                <li><a href="javaScripthard.html"><strong>JavaScript (hard)</strong></a></li>
+                <li><a href="javaScriptnightmare.html"><strong>JavaScript (nightmare)</strong></a></li>
+            </ul>
+          </nav>
+          <div class="col-12 col-md-6 col-lg-8 tartalom">
+              <h2 id="bevezeto">CSS tudnivalók</h2>
+              <p>Van egy csomó dolog, ami miatt indokolt a volt ez a page is, mert felejt az ember. Nem lesz az alapoktól, mert azért azokat gyorsan le lehet lesni. Megint a lényeg az,
+                hogy rögzüljenek a dolgok, meg persze az, hogy a nehezebb dolgok is gyorsan, pár kattintásra legyenek.
+              </p>
+              <h2 id="floating">Floating-igazítások</h2>
+              <p>Az elemek igazítására szolgál. <a href="./Példaoldalak a cssekhez/Floating-igazítások/floating.html" target="_blank">Csináltam egy aloldalt</a>, hogy látható is legyen, hogy miről van szó.</p>
+              <h4>Első példa</h4>
+              <p>Először is, a css-ben be lett állítva az összes elemre az oldalon a <code>box-sizing: border-box;</code></p>
+              <p>Ennek köszönhetően a padding és a margin nem növeli az adott elem szélességét.</p>
+              <p>végül felvettem a fontos paramétereket az első példán:</p>
+              <code><pre>
+            .imgContainer {
+                float: left;
+                width: 33.3%;
+                padding: 5px;
+            }
+            
+            .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+            }</pre></code>
+            <p>Balraigazítás után (mert ha right-ra állítanám a <code>float</code>-ot, akkor fordított sorrendben lennének a képek) a container szélességét 33.3%-ra állítottam, mert három kép fér el így, paddingnak pedig 5px-el lett beállítva, de ezt
+                ugye befelé veszi el, mert a border box be van állítva. Ha nem lenne, akkor már nem fértek volna el.
+            </p>
+            <p>Ezek után magát a <code>.clearfix</code> class-t állítottam be.</p>
+            <p>kapott egy <code>::after</code>-t a végére. Ez a kiválasztott elem utolsó gyermeke. Ezt inkább kozmetiaki tartalom hozzáadására szokták használni.
+                Ezt lehet nem fogom érteni később,
+            tehát itt a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank">link</a>, ami érthetően elmagyarázza.</p>
+            <p>De a lényeg: a tartalom be lett állítva, hogy legyen üres string, a <code>clear:both</code> segítségével jobbról és balról sem tud mellé menni az elemnek semmi.
+                De itt a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear" target="_blank">link</a></p>
+            <p>A <code>display: table</code> azt mondták a régi böngészők miatt kell.</p>
+            <h4>Második példa</h4>
+            <p>Kapott egy kis hátteret a második példánál a dolog, hogy látszódjanak a példák</p>
+            <p>Ezek után ki is vettem két képet, és azért, hogy jól látszódjon a különbség, balra állítottam a <code>float</code>-ot</p>
+            <h4>Harmadik példa</h4>
+            <p>Itt a <code>cleanfix</code>-et átállítottam <code>display: none</code>-ra, így eltűnt a <code>div</code> háttérszíne, mivel sorban van és nem veszi fel a méretét
+            a a gyermekelemnek.</p>
+            <h4>Negyedik példa</h4>
+            <p>Viszont, ha <code>inline-block</code>-ra állítom, akkor olyan formát kap, hogy akár el is fér mellette tartalom, és vissza is kapja a hátterét.</p>
+            <p>Ezen felül, ha egy másik <code>inline</code> elemet rakok be, akkor az mellete jelenik meg, mint ahogy a példában is látszik.</p>
+            <p>Először ugyanis egy <code>span</code>-t raktam bele, majd egy <code>p</code>-t <code>inline-block</code>-ra állítottam. Alatta pedig egy sima <code>p</code> van,
+            hogy látszódjon a különbség.</p>
+            <h4>Ötödik példa</h4>
+            <p>Egy plusz <code>clearfix</code>-et tettem be, hogy ne vegyék el az egész képernyőt a dolgaim.</p>
+            <h2 id="position">Position</h2>
+            <p>A legfontosabb positionokat fogom bemutatni. <a href="/Példaoldalak a cssekhez/Position/position.html" target="_blank">Ezen az oldalon</a> lehet megnézni a dolgokat. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Itt pedig</a> a hivatalosat
+            is el lehet olvasni</p>
+            <h4>Static</h4>
+            <p>Az elemnek a pozícióját a többi elem határozza meg. A box az oldal végéig tart.</p>
+            <h4>Relative</h4>
+            <p>Ahhoz a normál pozícióhoz képst, ahol mondjuk staticban lenne, ahhoz képest tolom el. Tehát, ha nem csinálok semmit vele, és nem adok meg neki paramétereket,
+                akkor ugyanott lesz, mintha static lenne.
+            <p>A példában <code>left: 30px</code> és <code>top: 5px</code> lett beállítva.</p>
+            </p>
+            <h4>Fixed</h4>
+            <p>Abban különbözik a többitől, hogy a böngésző ablakhoz (viewport) képest van megadva. A például alulról és jobbról 0 van beállítva, így a jobb alsó sarokba került.</p>
+            <h4>Absolute</h4>
+            <p>Ehhez kell egy relative elem, amibe belerakjuk az Absolute pozíciójú elemet. Belerakhattam volna az előzőbe is, de mindegy.</p>
+            <p>Az Absolute pozíciójú elem ugyanis úgy viselkedik, hogy ahhoz a szülő elemhez igazítja magát, ami nem relative. Megkeresi a böngésző első <code>div</code>-et,
+                ami nem statikus (tehát vagy absolute, vagy relative, vagy fixed), és ahhoz igazítja az magát.</p>
+            <h4>Sticky</h4>
+            <p>Persze ebből aztán semmi nem látszódik a példaoldalon, de a lényeg az, ha görgetem az oldalt, akkor neki a pozítciója fix. Amit beállítottam például, a <code>top: 0</code> annyit tesz,
+            hogy amikor eléri a sticky a lefele görgetésnél a topot, akkor ott ragad. Menüknél szokták leginkább használni.</p>
+            <h2 id="mertekegysegek">Mértékegységek</h2>
+            <p>A példaoldal <a href="/Példaoldalak a cssekhez/Mértékegységek/mertekegysegek.html" target="_blank">IDE KATTINTVA</a> érhető el.</p>
+            <p>Először minden <code>p</code> elemre beállítottam, hogy a sormagasság legyen 2em, tehát 2x16 pixel.</p>
+            <p>Utána a <code>div</code>-et pedig 30px-re, a benne lévő <code>span</code>-t pedig 0.5em-re, ami annyit tesz, hogy 30x0.5-re, vagyis 15px-re.</p>
+            <p>Ezen nehéz bármi magyarázni, nézni kell a példát.</p>
+            <h4>Viewport</h4>
+            <p>A böngészőablakhoz méri magát. Egy full HD-n kb 1000px a magasság és egy viewport height, vagy ahogy írjuk, <code>vh</code>, az 1%-a. Szélességre a viewport weight,
+            vagyis <code>vw</code>-vel hivatkozunk.</p>
+            <h2 id="pszeudo-elemek">Pszeudo-elemek</h2>
+            <p>Ennek a linkjét <a href="/Példaoldalak a cssekhez/Pszeudo-elemek/pszeudo.html" target="_blank">ITT</a> érem el.</p>
+            <p>Az oldalon egy sima checkbox van, ez lesz kicsit feljavítva.</p>
+            <p>Arra szolgálnak, hogy az <code>after</code> és a <code>before</code> segítségével csicsássá tegye az elemeinket.</p>
+            <p>Először kikapcsoltam az inputot, majd mindent <code>border-box</code>-ra állítottam, az <code>outline</code> segítségével pedig kiemelések sem lesznek.</p>
+            <p>Ezek után a <code>display</code>-t <code>block</code>-ra állítottam, a <code>width</code>-et pedig 4em-re, hogy kövösse a szülőelemet, ha az változna, a <code>height</code> 2em lett,
+                a <code>position</code> pedig <code>relative</code> lett, hogy tudjam mozgatni, ha szükséges lenne. A végére még a <code>cursor</code> az <code>pointer</code> lett.</p>
+            <p>Az egyik fontos dolog, hogy még be kellett állítani, hogy az <code>user-select</code> az <code>none</code> legyen, hogy a felhasználó ne tudja kijelölni, így nem lesz
+                olyan ocsmány, kék háttere.</p>
+            <h4>::after</h4>
+            <p>Ráküldtem az <code>::after</code>-t a <code>tgl-btn-re</code>. Ezt a <code>.tgl + .tgl-btn::after</code>-el oldottam meg, ami annyit csinál, hogy a <code>.tgl</code> után
+            érkező <code>tgl-btn</code>-nek az <code>::after</code>-ét paraméterezi be.</p>
+            <p>kapott a <code>position</code> egy <code>relative</code> érétéket, hogy a kapcsoló tudjon jobbra, vagy balra mozogni. A <code>display</code> itt is <code>block</code>. A <code>content</code> pedig
+            <code>""</code> lett. Ennek a lényege <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank">ITT</a> olvasható el. Meg amúgy az egész ::after is.</p>
+            <p>Ezután le kell követni amit írtam, mert kerekítések és hasonló dolgok történtek.
+            </p>
+            <h2 id="display">Display</h2>
+            <p>A <a href="/Példaoldalak a cssekhez/Display/display.html" target="_blank">példában</a> a <code>block</code>-ot, az <code>inline-blockot</code> és az <code>inline</code>-t
+            csináltam meg.</p>
+            <p>Alapjáraton a csillagok <code>display-block</code>-ban vannak, alatta <code>block</code>-ban, legalul pedig <code>inline</code>-ban.</p>
+            <p>Látható, hogy a box módosul, amiben megjelennek az elemek. A böngésző alapjáraton box-ban kezeli az elemeket, de <code>inline</code>-ban ez nincsen. Ilyenkor
+            például, ha a <code>margin</code>-t állítjuk, akkor csak balra és jobbra engedi, fölfele nem adja meg a margót. Érdekes, hogy a <code>padding</code> Viszont
+            ugyanúgy múködik, mint előtte.</p>
+            <p>A <code>block</code> pedig természetesen ugyanúgy működik, mint a legtöbb elem. Nem enged maga mellé semmit.</p>
+            <h2 id="sarkok">Sarkok</h2>
+            <p>Az oldal <a href="/Példaoldalak a cssekhez/Sarkok/sarkok.html" target="_blank">ITT</a> érhető el.</p>
+            <p>Az alapbeállítások után a <code>button</code>-t formáztam meg. Kikapcsoltam a bordert, a radius lekerekítést, majd beállítottam, 
+                hogy a színt és a fontot megörökölje a szülőelemtől, meg egy-két kisebb dolgot.</p>
+            <p>Végig kell nézni a beállításokat, nagyából egyértelműek. Ami kicsit érdekes, hogy a <code>border-radius</code> azért van 99em-en, hogy az bármekkora gombot kb.
+                teljes félkörre kerekít.</p>
+            <h2 id="responsivepic">Reszponzív képek</h2>
+            <p>A példaoldal <a href="/Példaoldalak a cssekhez/Reszponzív képek/responsivepic.html" target="_blank">ITT</a> található meg.</p>
+            <p>A reszponzív képek arra szolgálnak, hogy bizonyos képméret alatt ne a nagy képet töltse fel, hiszen teljesen fölösleges, ha például telefonról nézi valaki.</p>
+            <p>Az érdekes az, hogy ilyenkor nem <code>img</code>-vel kell létrehozni képeket, hanem egy <code>picture</code>-ban, amiben megadjuk a <code>source</code>-t,
+                és az alá kerül a <code>img</code> elem.</p>
+            <p>Na itt jön ki brutálisan, hogy mennyire nem szabad több szóból, elválasztva adni címeket és hasonlók, mert a <code>srcset</code> ezt nem tolerálja.</p>
+            <h2 id="hatterek">Hátterek</h2>
+            <p>Az oldal <a href="/Példaoldalak a cssekhez/Hátterek/hatterek.html">IDE KATTINTVA található meg.</a></p>
+            <p>A legegyszerűbb dolog történt: a teljes oldal kapott egy hátteret, viszont voltak beállítások, például az, hogy ne ismétlődjön, illetve, hogy a bal-fölső sarokba
+                kerüljön.
+            </p>
+            <p>Még a margót is odaraktam, hogy ne fusson rá a szöveg.</p>
+            <p>A végén kikommenteltem, hogy mik lettek beállítva, fölötte viszont ott van sorrendben, hogy mit kell beállítani, ha egy sorban akarja megírni az ember
+                a háttérkép tulajdonságait.
+            </p>
+            <h2 id="szinatmenet">Színek átmenettel</h2>
+            <p>A <a href="/Példaoldalak a cssekhez/Színek átmenettel/szinatmenet.html" target="_blank">link</a> itt van, nem színeztem be mindet.</p>
+            <p>A legfontosabb, hogy a <code>background-clip</code> segítségével lehet átszínezni a dolgokat, mint ahogy a példából is látszik.</p>
+          </div>
+          <div class="col-12 col-md-3 col-lg-2 p-0">
+            <div id="menusor">
+                <ul class="almenu">
+                    <li><a href="#bevezeto">Bevezető</a></li>
+                    <li><a href="#floating">Floating-igazítások</a></li>
+                    <li><a href="#position">Position</a></li>
+                    <li><a href="#mertekegysegek">Mértékegységek</a></li>
+                    <li><a href="#pszeudo-elemek">Pszeudo-elemek</a></li>
+                    <li><a href="#display">Display</a></li>
+                    <li><a href="#sarkok">Sarkok</a></li>
+                    <li><a href="#responsivepic">Reszponzív képek</a></li>
+                    <li><a href="#hatterek">Hátterek</a></li>
+                    <li><a href="#szinatmenet">Színek átmenettel</a></li>
+                  </ul>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
